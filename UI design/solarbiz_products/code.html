@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed": "#b1f0ce",
+                        "outline": "#9f8e7a",
+                        "surface-container": "#201f1f",
+                        "on-secondary-fixed-variant": "#6d3900",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-bright": "#3a3939",
+                        "on-surface-variant": "#d7c3ae",
+                        "primary": "#ffc880",
+                        "on-tertiary-fixed-variant": "#0e5138",
+                        "primary-fixed": "#ffddb4",
+                        "tertiary-container": "#85c3a3",
+                        "on-tertiary": "#003824",
+                        "tertiary-fixed-dim": "#95d4b3",
+                        "on-background": "#e5e2e1",
+                        "background": "#131313",
+                        "secondary-fixed": "#ffdcc2",
+                        "on-surface": "#e5e2e1",
+                        "on-secondary-container": "#432100",
+                        "on-primary-fixed-variant": "#633f00",
+                        "surface-dim": "#131313",
+                        "on-primary-fixed": "#291800",
+                        "surface": "#131313",
+                        "secondary-container": "#d97807",
+                        "inverse-on-surface": "#313030",
+                        "secondary": "#ffb77c",
+                        "on-secondary": "#4d2700",
+                        "inverse-primary": "#835500",
+                        "surface-container-lowest": "#0e0e0e",
+                        "primary-container": "#f5a623",
+                        "surface-tint": "#ffb955",
+                        "on-secondary-fixed": "#2e1500",
+                        "primary-fixed-dim": "#ffb955",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed": "#002114",
+                        "secondary-fixed-dim": "#ffb77c",
+                        "surface-container-highest": "#353534",
+                        "error-container": "#93000a",
+                        "surface-container-high": "#2a2a2a",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-container": "#644000",
+                        "on-primary": "#452b00",
+                        "outline-variant": "#524534",
+                        "error": "#ffb4ab",
+                        "inverse-surface": "#e5e2e1",
+                        "on-tertiary-container": "#0f5138",
+                        "tertiary": "#a0dfbe",
+                        "surface-variant": "#353534",
+                        "warm-white": "#FFFDF5",
+                        "near-black": "#0A0A0A"
+                    },
+                    fontFamily: {
+                        "headline": ["Epilogue"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .grainy-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        .solar-glass {
+            background: rgba(53, 53, 52, 0.6);
+            backdrop-filter: blur(24px);
+        }
+        .diagonal-cut {
+            clip-path: polygon(0 0, 85% 0, 100% 15%, 100% 100%, 0 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<div class="fixed inset-0 grainy-overlay z-[100]"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 rounded-tr-[45deg] bg-neutral-900/60 backdrop-blur-xl shadow-[0_0_40px_-15px_rgba(245,166,35,0.3)] flex justify-between items-center px-8 h-20 max-w-full mx-auto border-none">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-amber-500 text-3xl">solar_power</span>
+<span class="font-headline tracking-tighter uppercase font-bold text-2xl text-amber-500 italic">SOLARBIZ</span>
+</div>
+<nav class="hidden md:flex items-center gap-8 font-headline font-medium text-lg">
+<a class="text-amber-500 border-b-2 border-amber-500 pb-1" href="#">Products</a>
+<a class="text-neutral-400 hover:text-neutral-100 transition-colors" href="#">Services</a>
+<a class="text-neutral-400 hover:text-neutral-100 transition-colors" href="#">About</a>
+<a class="text-neutral-400 hover:text-neutral-100 transition-colors" href="#">Contact</a>
+</nav>
+<button class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-md font-headline font-bold uppercase tracking-wider hover:scale-95 transition-transform">
+            Get a Quote
+        </button>
+</header>
+<main class="pt-32 pb-20">
+<!-- Hero Section -->
+<section class="px-8 mb-16">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end gap-8">
+<div class="max-w-3xl">
+<h1 class="font-headline text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] mb-6">
+                        THE <span class="text-primary">ENERGY</span><br/>CATALOGUE
+                    </h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-xl leading-relaxed">
+                        Precision-engineered solar hardware for the Nigerian climate. High-efficiency components designed for a lifetime of radiant performance.
+                    </p>
+</div>
+<div class="w-full md:w-auto flex flex-col items-start md:items-end gap-4">
+<div class="flex items-center gap-2 text-primary font-label text-sm uppercase tracking-widest bg-surface-container-high px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-sm">bolt</span>
+<span>24/7 Power Security</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Category & Filter Bar -->
+<section class="sticky top-20 z-40 bg-background/80 backdrop-blur-md py-6 border-none">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col lg:flex-row justify-between items-center gap-6 bg-surface-container-low p-2 rounded-xl">
+<!-- Category Tabs -->
+<div class="flex flex-wrap gap-2">
+<button class="px-6 py-2 rounded-lg bg-primary-container text-on-primary-container font-headline font-bold text-sm">All</button>
+<button class="px-6 py-2 rounded-lg text-neutral-400 hover:bg-surface-container-high transition-colors font-headline font-bold text-sm">Panels</button>
+<button class="px-6 py-2 rounded-lg text-neutral-400 hover:bg-surface-container-high transition-colors font-headline font-bold text-sm">Batteries</button>
+<button class="px-6 py-2 rounded-lg text-neutral-400 hover:bg-surface-container-high transition-colors font-headline font-bold text-sm">Inverters</button>
+<button class="px-6 py-2 rounded-lg text-neutral-400 hover:bg-surface-container-high transition-colors font-headline font-bold text-sm">Stabilizers</button>
+<button class="px-6 py-2 rounded-lg text-neutral-400 hover:bg-surface-container-high transition-colors font-headline font-bold text-sm">Lights</button>
+</div>
+<!-- Filter Actions -->
+<div class="flex items-center gap-4 w-full lg:w-auto">
+<div class="flex items-center bg-surface-container-high rounded-lg px-4 py-2 flex-grow lg:flex-grow-0">
+<span class="material-symbols-outlined text-neutral-500 mr-2">sort</span>
+<select class="bg-transparent border-none text-sm font-label focus:ring-0 text-neutral-300 w-full">
+<option>Sort by Price</option>
+<option>Sort by Capacity</option>
+<option>Brand: A-Z</option>
+</select>
+</div>
+<button class="p-2 bg-surface-container-high text-neutral-400 rounded-lg hover:text-primary transition-colors">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="max-w-7xl mx-auto px-8 mt-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+<!-- Product Card 1: Panel -->
+<div class="group relative">
+<div class="bg-surface-container-low rounded-lg p-6 diagonal-cut transition-all duration-500 hover:translate-y-[-8px]">
+<div class="aspect-square mb-6 overflow-hidden rounded-md bg-gradient-to-br from-surface-container-high to-surface-container-low relative">
+<img alt="High Efficiency Panel" class="w-full h-full object-cover mix-blend-overlay opacity-60 group-hover:scale-110 transition-transform duration-700" data-alt="Monocrystalline solar panel array with sleek black frame reflecting blue sky and morning sunlight in a minimalist studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkqzBginsGJtsPVoWJ84sStjl4FAWheVOlKtDh2qXuSDKM0sQw8mvOrRVls0JFm25e_kg73w22O6YiUpyrEmiCJ1v5gQ5CQoeenVJV-lr8UQOWaljSWlWJVW-N9R2lqDMFciA60YBc7PNqATGwxAq4gE3VO69KfhV9NZdlfnn6xp7f-TY4WDqwnC1bSO9X7pXFDNVvCiUvzC-TRhsC0GCrQf6mbCJX4V2uJ4NioxXv_OzfjwvYL5ABhWoeHb6mDt8jVaxir3Wgix0"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-8xl text-primary/40 group-hover:scale-125 transition-transform duration-500">solar_power</span>
+</div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline font-bold text-2xl tracking-tight">Mono-Crystal X1</h3>
+<span class="font-label text-primary text-xs bg-primary/10 px-2 py-1 rounded">PREMIUM</span>
+</div>
+<div class="font-label text-neutral-400 text-sm mb-6 flex gap-4">
+<span>550W OUTPUT</span>
+<span>21.3% EFFICIENCY</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-neutral-500 text-xs font-label uppercase">Starting From</span>
+<span class="text-2xl font-bold text-warm-white">₦ 145,000</span>
+</div>
+<button class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center group-hover:bg-primary-container group-hover:text-on-primary-container transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2: Battery -->
+<div class="group relative">
+<div class="bg-surface-container-low rounded-lg p-6 diagonal-cut transition-all duration-500 hover:translate-y-[-8px]">
+<div class="aspect-square mb-6 overflow-hidden rounded-md bg-gradient-to-br from-surface-container-high to-surface-container-low relative">
+<img alt="LFP Storage" class="w-full h-full object-cover mix-blend-overlay opacity-60 group-hover:scale-110 transition-transform duration-700" data-alt="A modern industrial lithium battery storage unit with glowing LED indicators in a darkened high-tech laboratory environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA32-6o_4Eb-iB6OCYeDZrDkxXi4hgyx8MqCT00yJinH5LBZWRz4fAqscftGJwwigYTqqH1KIG5e85f2nXg3Y-1LYcWBe5e0njnOC4yuK_EFVnXEE0xudkyPsb53nZtRgPcZ3pF_TFAqoHDQmhmE2GpbWuNHfgwhJpuGhqLD3ky9dcxoJF_-amCR2D2irTelnMXTcXjg66-QAIDTjKqFNtO0nLiEsH352UiPzm8UO-W5YrbektW15QeMT1PU3wLQyFSV2C9gpqE4mw"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-8xl text-primary/40 group-hover:scale-125 transition-transform duration-500">battery_charging_full</span>
+</div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline font-bold text-2xl tracking-tight">Lithium Core 200</h3>
+<span class="font-label text-tertiary text-xs bg-tertiary/10 px-2 py-1 rounded">ECO-MODE</span>
+</div>
+<div class="font-label text-neutral-400 text-sm mb-6 flex gap-4">
+<span>12V 200AH</span>
+<span>LFP TECHNOLOGY</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-neutral-500 text-xs font-label uppercase">Starting From</span>
+<span class="text-2xl font-bold text-warm-white">₦ 890,000</span>
+</div>
+<button class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center group-hover:bg-primary-container group-hover:text-on-primary-container transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3: Inverter -->
+<div class="group relative">
+<div class="bg-surface-container-low rounded-lg p-6 diagonal-cut transition-all duration-500 hover:translate-y-[-8px]">
+<div class="aspect-square mb-6 overflow-hidden rounded-md bg-gradient-to-br from-surface-container-high to-surface-container-low relative">
+<img alt="Smart Inverter" class="w-full h-full object-cover mix-blend-overlay opacity-60 group-hover:scale-110 transition-transform duration-700" data-alt="Digital energy monitor screen showing voltage metrics with sharp technical typography and amber backlight in the dark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3g921ncehdW9a3PFgWYSUIj07S4KN_7kvNRLpMyDdN-bClj8nEomaaI2-FiuDzB8JLpJWIHIoYTvVf_XTzD2tV1zRLMKEZUVSrErDSPraSeNYLQ_GEJVLNaSvctJNDzjSjlPnTofdKhUa3Cwh0jKWk-a_91tspIoN1X79JJEUc9Sy_i4q8VsbZBM2FzVZKSxCscsvKrt5oe8lsNc4-G8NCQmabGbgOT6Z72rr3yT_DZYLk81mh4Sf2wwNW0AlSqUOyux3zyiE5T4"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-8xl text-primary/40 group-hover:scale-125 transition-transform duration-500">settings_input_component</span>
+</div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline font-bold text-2xl tracking-tight">SmartFlow Pro 5</h3>
+<span class="font-label text-primary text-xs bg-primary/10 px-2 py-1 rounded">BEST SELLER</span>
+</div>
+<div class="font-label text-neutral-400 text-sm mb-6 flex gap-4">
+<span>5KVA HYBRID</span>
+<span>PURE SINE WAVE</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-neutral-500 text-xs font-label uppercase">Starting From</span>
+<span class="text-2xl font-bold text-warm-white">₦ 540,000</span>
+</div>
+<button class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center group-hover:bg-primary-container group-hover:text-on-primary-container transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4: Light -->
+<div class="group relative">
+<div class="bg-surface-container-low rounded-lg p-6 diagonal-cut transition-all duration-500 hover:translate-y-[-8px]">
+<div class="aspect-square mb-6 overflow-hidden rounded-md bg-gradient-to-br from-surface-container-high to-surface-container-low relative">
+<img alt="Solar Lighting" class="w-full h-full object-cover mix-blend-overlay opacity-60 group-hover:scale-110 transition-transform duration-700" data-alt="Minimalist outdoor solar street lamp with architectural design at twilight casting a warm gold glow on a concrete wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNiSsF1TcVGuXel7B2i04tpo43d9JMERhttGr4bbrBFnZrKcGEg3BFlhAp30neKUglzKvjVnlkxjoKULb7-Csjw4o_WphPSt2pnwVZX5LqHgt5smh4qxTgg2Hjat9A6kVUUkN9MQ3yKvWmLdINtIw5HuMNFEGQnshEvBaqMxcQ041Y6NY-mAiSh34o6kIR2iYzp6I7Kv8FQznKKUu3pn4436ZwvCqicog-TKAVqZoZSCgpchd51TsduY1y31SRdULEPzrurX6SIPE"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-8xl text-primary/40 group-hover:scale-125 transition-transform duration-500">light_mode</span>
+</div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline font-bold text-2xl tracking-tight">Helios Street X</h3>
+<span class="font-label text-neutral-400 text-xs bg-neutral-800 px-2 py-1 rounded">OUTDOOR</span>
+</div>
+<div class="font-label text-neutral-400 text-sm mb-6 flex gap-4">
+<span>150W LED</span>
+<span>IP65 WATERPROOF</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-neutral-500 text-xs font-label uppercase">Starting From</span>
+<span class="text-2xl font-bold text-warm-white">₦ 45,000</span>
+</div>
+<button class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center group-hover:bg-primary-container group-hover:text-on-primary-container transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 5: Stabilizer -->
+<div class="group relative">
+<div class="bg-surface-container-low rounded-lg p-6 diagonal-cut transition-all duration-500 hover:translate-y-[-8px]">
+<div class="aspect-square mb-6 overflow-hidden rounded-md bg-gradient-to-br from-surface-container-high to-surface-container-low relative">
+<img alt="Stabilizer" class="w-full h-full object-cover mix-blend-overlay opacity-60 group-hover:scale-110 transition-transform duration-700" data-alt="Industrial power transformers and stabilization equipment with high-contrast shadows and technical metallic textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBydaCAK0oLQ_fcXPGSQTRpBidOEj2S5FDqSnPK2XCKjC0YDcbMEidveDmIaafSUWdi9B7UtvDNGoEn44CgDJWDTGfTaWBR4VtNiea4V1dLugmSQfmso7CEj24X31WaW7DnSZi8wkvf3C-TZVFUDPHCXAmuUY2OeId0sa_y3okjiKGKmF4YL8jAXm87kAp2ODhm2P9-o7tJvm8U24Lui7tKE4t6mcmFQ5aPS4NRVCBdweyqUg_DKbtM0jT77wqxqTvsTC-Yad0DqBA"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-8xl text-primary/40 group-hover:scale-125 transition-transform duration-500">security</span>
+</div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline font-bold text-2xl tracking-tight">VoltGuard 2000</h3>
+<span class="font-label text-primary text-xs bg-primary/10 px-2 py-1 rounded">ESSENTIAL</span>
+</div>
+<div class="font-label text-neutral-400 text-sm mb-6 flex gap-4">
+<span>2000W CAPACITY</span>
+<span>AUTO-VOLT TECH</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-neutral-500 text-xs font-label uppercase">Starting From</span>
+<span class="text-2xl font-bold text-warm-white">₦ 85,000</span>
+</div>
+<button class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center group-hover:bg-primary-container group-hover:text-on-primary-container transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 6: Controller -->
+<div class="group relative">
+<div class="bg-surface-container-low rounded-lg p-6 diagonal-cut transition-all duration-500 hover:translate-y-[-8px]">
+<div class="aspect-square mb-6 overflow-hidden rounded-md bg-gradient-to-br from-surface-container-high to-surface-container-low relative">
+<img alt="Charge Controller" class="w-full h-full object-cover mix-blend-overlay opacity-60 group-hover:scale-110 transition-transform duration-700" data-alt="Microchip circuit board with glowing light trails and gold pins representing advanced charge controller technology" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB46FZkhDg0ANIz52m-baquEcrmWhbZU9bAgrXr0uEeHxiJkRZSl2oRdzk3Uz5OwlZHQeXQFne6dSgWEihT3vyPRkyuB30Q9xkIm2oHbr1t8p9ctTgvNdG6gXUquGtn5g6737wd0O5JXCl3v2FXph7v9wB9noQJfmcjejewdBtQ3VJJ_xFAqmbhG-9qVyRxfjsHt5CZ4CfeaTaGU3zwdy6NF6f632mXG0D0cJjUkCy-PZZppA2KZFpPK3ayAPuSoqieQbAxku_FFOw"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-8xl text-primary/40 group-hover:scale-125 transition-transform duration-500">account_tree</span>
+</div>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline font-bold text-2xl tracking-tight">MPPT Master 60</h3>
+<span class="font-label text-primary text-xs bg-primary/10 px-2 py-1 rounded">TECH+</span>
+</div>
+<div class="font-label text-neutral-400 text-sm mb-6 flex gap-4">
+<span>60A CHARGE</span>
+<span>98% TRACKING</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-neutral-500 text-xs font-label uppercase">Starting From</span>
+<span class="text-2xl font-bold text-warm-white">₦ 110,000</span>
+</div>
+<button class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center group-hover:bg-primary-container group-hover:text-on-primary-container transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Specs / Upsell Section -->
+<section class="mt-32 px-8">
+<div class="max-w-7xl mx-auto bg-warm-white text-near-black rounded-xl p-12 md:p-24 overflow-hidden relative">
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[40rem] rotate-12 -translate-y-20 translate-x-20">flare</span>
+</div>
+<div class="relative z-10 grid md:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="font-headline text-5xl font-black tracking-tight leading-none mb-8">
+                            NOT SURE WHAT<br/>YOU NEED?
+                        </h2>
+<p class="text-xl opacity-80 mb-12 font-medium">
+                            Our engineers can help you design a custom configuration tailored to your specific power consumption patterns.
+                        </p>
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-near-black/5 flex items-center justify-center">
+<span class="material-symbols-outlined">handyman</span>
+</div>
+<span class="font-headline font-bold">Complimentary Load Audit</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-near-black/5 flex items-center justify-center">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<span class="font-headline font-bold">5-Year Premium Warranty</span>
+</div>
+</div>
+</div>
+<div class="bg-near-black text-warm-white p-8 rounded-lg diagonal-cut">
+<h4 class="font-label text-sm uppercase tracking-[0.2em] mb-6 text-primary">System Configurator</h4>
+<div class="space-y-6">
+<div>
+<label class="block text-xs font-label uppercase mb-2 opacity-50">Estimated Daily Usage</label>
+<input class="w-full accent-primary bg-surface-container-highest h-2 rounded-full appearance-none" type="range"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container-low rounded">
+<span class="block text-[10px] uppercase font-label opacity-50 mb-1">Recommended</span>
+<span class="text-xl font-headline font-bold">3.5kVA System</span>
+</div>
+<div class="p-4 bg-surface-container-low rounded">
+<span class="block text-[10px] uppercase font-label opacity-50 mb-1">Est. Savings</span>
+<span class="text-xl font-headline font-bold">₦2.4M/yr</span>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-4 font-headline font-black uppercase tracking-widest text-sm hover:translate-x-2 transition-transform flex items-center justify-center gap-2">
+                                BOOK FREE CONSULTATION <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- NavigationDrawer (Mobile Only Mockup) -->
+<div class="fixed left-0 top-0 h-full w-80 z-40 p-6 bg-neutral-950 rounded-r-3xl border-r border-neutral-800/50 hidden">
+<h2 class="text-amber-500 font-bold font-epilogue font-medium text-lg mb-8 uppercase">SOLARBIZ MENU</h2>
+<nav class="space-y-4">
+<a class="flex items-center gap-4 p-4 bg-amber-500/20 text-amber-500 rounded-xl font-headline font-medium" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span>Products</span>
+</a>
+<a class="flex items-center gap-4 p-4 text-neutral-400 hover:translate-x-2 transition-transform font-headline font-medium" href="#">
+<span class="material-symbols-outlined">handyman</span>
+<span>Services</span>
+</a>
+<a class="flex items-center gap-4 p-4 text-neutral-400 hover:translate-x-2 transition-transform font-headline font-medium" href="#">
+<span class="material-symbols-outlined">info</span>
+<span>About</span>
+</a>
+<a class="flex items-center gap-4 p-4 text-neutral-400 hover:translate-x-2 transition-transform font-headline font-medium" href="#">
+<span class="material-symbols-outlined">potted_plant</span>
+<span>Contact</span>
+</a>
+</nav>
+</div>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-start bg-neutral-950 border-t border-neutral-800">
+<div class="mb-10 md:mb-0">
+<span class="text-neutral-100 font-bold text-2xl font-headline mb-4 block">SOLARBIZ</span>
+<p class="max-w-xs text-neutral-500 text-sm leading-relaxed mb-6">
+                Redefining energy independence for the modern African home and enterprise through superior solar technology.
+            </p>
+<p class="font-epilogue text-sm uppercase tracking-widest text-neutral-500">© 2024 SolarBiz Solutions Nigeria. All Rights Reserved.</p>
+</div>
+<div class="grid grid-cols-2 gap-12">
+<div class="flex flex-col gap-3">
+<h5 class="text-amber-500 font-bold text-xs uppercase tracking-tighter mb-2">Navigation</h5>
+<a class="text-amber-500 underline text-sm uppercase tracking-widest font-headline" href="#">Privacy Policy</a>
+<a class="text-neutral-500 hover:text-amber-400 transition-colors text-sm uppercase tracking-widest font-headline" href="#">Terms of Service</a>
+<a class="text-neutral-500 hover:text-amber-400 transition-colors text-sm uppercase tracking-widest font-headline" href="#">Installation Guide</a>
+</div>
+<div class="flex flex-col gap-3">
+<h5 class="text-amber-500 font-bold text-xs uppercase tracking-tighter mb-2">Connect</h5>
+<a class="text-neutral-500 hover:text-amber-400 transition-colors text-sm uppercase tracking-widest font-headline" href="#">Instagram</a>
+<a class="text-neutral-500 hover:text-amber-400 transition-colors text-sm uppercase tracking-widest font-headline" href="#">LinkedIn</a>
+<a class="text-neutral-500 hover:text-amber-400 transition-colors text-sm uppercase tracking-widest font-headline" href="#">WhatsApp</a>
+</div>
+</div>
+</footer>
+<a aria-label="Chat on WhatsApp" class="fixed bottom-8 right-8 z-[100] w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 group" href="#">
+<svg class="w-8 h-8 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.659 1.432 5.631 1.433h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
+</svg>
+<span class="absolute right-full mr-4 bg-neutral-900 text-white text-xs py-2 px-4 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-neutral-800">
+    Chat with an Expert
+  </span>
+</a></body></html>

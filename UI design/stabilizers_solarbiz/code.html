@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#ffb77c",
+                        "surface-tint": "#ffb955",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary": "#452b00",
+                        "on-secondary-container": "#432100",
+                        "secondary": "#ffb77c",
+                        "on-primary-fixed": "#291800",
+                        "surface-container-highest": "#353534",
+                        "secondary-fixed": "#ffdcc2",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#d7c3ae",
+                        "secondary-container": "#d97807",
+                        "on-tertiary-fixed": "#002114",
+                        "on-surface": "#e5e2e1",
+                        "tertiary": "#a0dfbe",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-dim": "#131313",
+                        "surface": "#131313",
+                        "primary-fixed-dim": "#ffb955",
+                        "primary": "#ffc880",
+                        "on-secondary-fixed": "#2e1500",
+                        "on-secondary-fixed-variant": "#6d3900",
+                        "inverse-surface": "#e5e2e1",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#633f00",
+                        "on-background": "#e5e2e1",
+                        "outline-variant": "#524534",
+                        "on-tertiary": "#003824",
+                        "on-tertiary-fixed-variant": "#0e5138",
+                        "primary-fixed": "#ffddb4",
+                        "on-tertiary-container": "#0f5138",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#201f1f",
+                        "inverse-primary": "#835500",
+                        "tertiary-fixed-dim": "#95d4b3",
+                        "inverse-on-surface": "#313030",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#b1f0ce",
+                        "on-primary-container": "#644000",
+                        "tertiary-container": "#85c3a3",
+                        "surface-variant": "#353534",
+                        "surface-bright": "#3a3939",
+                        "on-secondary": "#4d2700",
+                        "primary-container": "#f5a623",
+                        "outline": "#9f8e7a",
+                        "surface-container-high": "#2a2a2a",
+                        "background": "#131313"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Epilogue"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.solar-glass {
+    background: rgba(53, 53, 52, 0.6);
+    backdrop-filter: blur(24px)
+    }
+.grain-texture {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuB-kvokzmV5iT135jZFadPcoEJVnPXBpdzbvq6RVgcugYMkh9eWGq2WpBs_i6fTmqunoMJWUqJa3ObSPbniVwh4jg1dzIWz2h6-LSxqJNwbUx2uwpLPI9rAQYEkE6tqQsIRnxGm0RtF-j1TJRsRQJM8LSRfnmXeBl6FxJwVTKemo7_3GIWDdnutgJrxdAkMTw_rhTxTEK6txSATkcJKJN8hn-R9J32cKa0H_3_To13I5iB5EDgi_6ycVQEgOvItE4WZaay4JmYGhoc)
+    }
+.diagonal-cut {
+    clip-path: polygon(0 0, 85% 0, 100% 15%, 100% 100%, 0 100%)
+    }
+.solar-glow {
+    box-shadow: 0 0 100px 0 rgba(245, 166, 35, 0.1)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<div class="grain-texture"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-neutral-950/60 backdrop-blur-3xl shadow-[0_8px_30px_rgb(245,166,35,0.1)]">
+<div class="flex justify-between items-center px-8 h-20 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-amber-500 text-3xl">solar_power</span>
+<span class="font-['Epilogue'] tracking-tighter uppercase font-bold text-2xl font-black tracking-tighter text-amber-500">HELIOS</span>
+</div>
+<nav class="hidden md:flex gap-8 font-['Epilogue'] tracking-tighter uppercase font-bold">
+<a class="text-neutral-400 hover:text-amber-400 transition-colors duration-300" href="#">Generation</a>
+<a class="text-neutral-400 hover:text-amber-400 transition-colors duration-300" href="#">Storage</a>
+<a class="text-amber-500 transition-colors duration-300" href="#">Stabilizers</a>
+<a class="text-neutral-400 hover:text-amber-400 transition-colors duration-300" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-amber-500 cursor-pointer active:scale-95 transition-transform">menu</span>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[707px] flex items-center px-8 py-20 overflow-hidden bg-surface">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-container/10 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="container mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-full border border-outline-variant/15">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label text-xs tracking-widest uppercase text-primary">Ultra-Precision Regulation</span>
+</div>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tighter leading-[0.95] text-on-surface">
+                        THE SILENT <span class="text-primary-container">GUARDIANS</span> OF POWER.
+                    </h1>
+<p class="text-lg text-on-surface-variant max-w-lg leading-relaxed">
+                        Engineered for the Nigerian grid. Our monolithic voltage stabilizers eliminate surges, brownouts, and spikes before they reach your delicate solar infrastructure.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary-container text-on-primary-container px-8 py-4 rounded-md font-headline font-bold text-lg hover:brightness-110 transition-all shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]">
+                            Explore Industrial Range
+                        </button>
+<button class="border border-outline-variant/30 hover:bg-primary/5 px-8 py-4 rounded-md font-headline font-bold text-lg transition-all">
+                            Technical Data
+                        </button>
+</div>
+</div>
+<div class="relative group">
+<div class="diagonal-cut w-full aspect-square bg-surface-container-low overflow-hidden shadow-2xl border border-outline-variant/10">
+<img alt="Industrial voltage stabilizer close up" class="w-full h-full object-cover grayscale-[0.2] group-hover:scale-105 transition-transform duration-700" data-alt="Close-up of a high-end industrial voltage stabilizer with matte black metal finish and amber LED display in a clean tech lab" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMcUJE69PdWEow03ZKvp1bPTLAw1Iq2W54Z5igEXpFE273a_x4CH3qowGLfEcns7RHpCAaqyR3hKi2tTyrff-vWFjJWd2VOZAop4GEf6zL_iYQxIfblbZrsKRkSwQBL8qDwBvuYmkMOu4nNT2Yl-_QVbYHGf9NBXo0rsNZfty5GR8s6DG7VXLlyWerMTP6K0Vum6m_OtvDCp-jTYplZUsvSEyxMC8HzApnJ08sl5jO9yhXAqtFeQbW4LKiRIUCZNn_4vK0FcPJurU"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-surface-container-high p-6 rounded-lg border border-outline-variant/15 shadow-xl">
+<div class="font-label text-3xl font-bold text-primary">99.8%</div>
+<div class="text-xs uppercase tracking-widest text-on-surface-variant">Stability Rating</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Protection Features Grid -->
+<section class="bg-surface-container-low py-24 px-8 relative">
+<div class="container mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl">
+<h2 class="font-headline text-4xl font-black tracking-tight mb-4 uppercase">Bulletproof Protection</h2>
+<p class="text-on-surface-variant">Our proprietary logic controllers sense voltage shifts in 10ms—faster than any breaker can trip.</p>
+</div>
+<span class="font-label text-sm text-primary tracking-tighter">SEC_PROT_V4.0 // 2024</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Feature 1 -->
+<div class="bg-surface p-8 rounded-lg border border-outline-variant/5 hover:border-primary/20 transition-all group">
+<div class="w-12 h-12 bg-primary-container/10 rounded-md flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-3 uppercase tracking-tight">Over-Voltage Isolation</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Instantaneous decoupling during extreme grid swells to prevent transformer burnout.</p>
+</div>
+<!-- Feature 2 -->
+<div class="bg-surface p-8 rounded-lg border border-outline-variant/5 hover:border-primary/20 transition-all group">
+<div class="w-12 h-12 bg-primary-container/10 rounded-md flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined">shutter_speed</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-3 uppercase tracking-tight">Short Circuit Armor</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Magnetic-hydraulic circuit breakers provide precise trip points without nuisance disconnects.</p>
+</div>
+<!-- Feature 3 -->
+<div class="bg-surface p-8 rounded-lg border border-outline-variant/5 hover:border-primary/20 transition-all group">
+<div class="w-12 h-12 bg-primary-container/10 rounded-md flex items-center justify-center mb-6 text-primary">
+<span class="material-symbols-outlined">thermostat</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-3 uppercase tracking-tight">Thermal Management</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">High-grade copper windings with class H insulation for 24/7 heavy-duty operation.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Catalog (Bento Style) -->
+<section class="py-24 px-8 bg-surface">
+<div class="container mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Main Industrial Product -->
+<div class="md:col-span-8 bg-surface-container-low rounded-lg p-10 flex flex-col md:flex-row gap-12 border border-outline-variant/10 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[80px]"></div>
+<div class="flex-1 space-y-6 relative z-10">
+<span class="font-label text-xs text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded">Heavy Industry</span>
+<h3 class="font-headline text-4xl font-extrabold tracking-tighter">VOLT-MONOLITH 50KVA</h3>
+<div class="space-y-2">
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span class="text-sm opacity-60">Servo Motor Type</span>
+<span class="font-label text-sm">3-Phase Balance</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span class="text-sm opacity-60">Input Range</span>
+<span class="font-label text-sm">260V - 450V</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span class="text-sm opacity-60">Warranty</span>
+<span class="font-label text-sm text-tertiary">36 Months</span>
+</div>
+</div>
+<div class="pt-4">
+<div class="text-3xl font-headline font-black text-primary">₦ 4,850,000</div>
+<button class="mt-6 w-full md:w-auto bg-on-surface text-surface py-3 px-8 rounded font-bold hover:bg-primary transition-colors">Request Site Survey</button>
+</div>
+</div>
+<div class="flex-1 min-h-[300px] diagonal-cut bg-neutral-800">
+<img alt="Large industrial power unit" class="w-full h-full object-cover" data-alt="Massive industrial electrical transformer cabinet in a futuristic dark utility room with sharp amber lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDhrOZqWdnKO0k1LTgOgTvxyRu3_h2AY_fEdEmDus_cktpXkpSUAj8RE9poNhtnFnysAMTy_wazzjwNBavVN6OkLB_4RyMldlNDvB_DETF-Do-v3lOHdzR0BokKEoHhIArjXP_MZvlfDyc62JS5ceF8v0E5p5SXIbVR4rmEW3Wm_zegSHKsPGnGG5dIHkXLl3fzTI3a8qRErgNgg0-uC0plXMMuqVN352Y16Sv-jWqyRRnn0fmmDDd80yv2w8jv80UarqRkd1nOyU"/>
+</div>
+</div>
+<!-- Home Premium Product -->
+<div class="md:col-span-4 bg-surface-container-high rounded-lg p-8 flex flex-col justify-between border border-outline-variant/20 shadow-2xl">
+<div>
+<span class="font-label text-xs text-primary-fixed-dim uppercase tracking-widest bg-primary/10 px-3 py-1 rounded">Residential Elite</span>
+<div class="aspect-square my-8 bg-surface-container-lowest rounded-lg p-6 flex items-center justify-center">
+<img alt="Home stabilizer unit" class="w-full h-full object-contain" data-alt="Sleek modern black electronics box with digital display showing 230V, glowing with amber light in a contemporary home setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ3sg8AF7kuBObJlMRYMqAkJkBCa1qU8kpHmWWlRXrXsP5ZKaIk-oW1VTwWUHcB4gP0aumed2ATHIlo82ZQryGnIv8tVXnw8uUJkUKZby-Stj1tZ8e51o2UGHuUzFfa9eUCY5R-gthkdM_fyYYesUQQD_O23GKOgCLg-dOdxUNafbNKOaodmKGm01doOlIEKnUIY5Ku5pg260mFiNmojeR_sKapamz3oE1sYi_xt5QktY5fsRQIXMHGG_tJS8GnypDMVwWXF85yzE"/>
+</div>
+<h4 class="font-headline text-2xl font-bold tracking-tight">TITAN 10KVA RELAY</h4>
+<p class="text-sm text-on-surface-variant mt-2">The ultimate shield for inverters and high-end home appliances.</p>
+</div>
+<div class="mt-8 flex items-end justify-between">
+<div class="text-2xl font-headline font-black">₦ 285,000</div>
+<button class="p-4 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Compact Product -->
+<div class="md:col-span-4 bg-surface-container-low rounded-lg p-8 border border-outline-variant/10">
+<h4 class="font-headline text-xl font-bold mb-4 uppercase">Shield Pro 5KVA</h4>
+<div class="h-48 bg-surface rounded-md mb-6 overflow-hidden">
+<img alt="Circuitry detail" class="w-full h-full object-cover opacity-50" data-alt="Macro photo of high-quality copper coils and circuitry on a black PCB with golden solder points" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW9ha9cR0mJsuZu61vsi-aBSKzBTkHrKWDiwZK4SVmCI-gTTvlWoY-BpGK9U9SCg9M4hKGzx-AuXr5tU1SpZ-f6B3YjplHKxABzavMR1Wj7lpPZwapnmOUy3YwlwRHGVB9FF935gdCEcT4ORUs8b3AYcdx9qBbW8_39tT71Wh7-xeCNYVWF_b2CEcigUCYiG8FbNA5Z-Ju8iLe3Y3m8Ts3UtNqLFFRNOCSjAaygfgNOdiwu9XF8L2Xl68qLl1zS2rE5I-72MXBcPQ"/>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label font-bold text-lg">₦ 145,000</span>
+<span class="text-xs text-on-surface-variant uppercase tracking-widest">In Stock</span>
+</div>
+<button class="w-full mt-6 py-3 border border-outline-variant/30 text-sm font-bold rounded hover:bg-white/5 transition-colors">View Specs</button>
+</div>
+<!-- Promo Box -->
+<div class="md:col-span-8 bg-gradient-to-br from-primary-container/20 to-transparent rounded-lg p-10 border border-primary/20 flex items-center relative overflow-hidden">
+<div class="relative z-10 space-y-4">
+<h3 class="font-headline text-3xl font-black uppercase">Need a Custom Load Profile?</h3>
+<p class="text-on-surface-variant max-w-md">Our engineers provide free harmonic analysis for large scale industrial installations across West Africa.</p>
+<a class="inline-flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all" href="#">
+<span>Schedule Consultation</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="absolute right-0 top-0 h-full w-1/3 bg-surface-container-highest/20 blur-3xl rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Specs Tonal Section -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="container mx-auto px-8">
+<div class="grid md:grid-cols-2 gap-20">
+<div>
+<h2 class="font-headline text-4xl font-black mb-8 uppercase tracking-tighter">Precision Specs</h2>
+<div class="space-y-6">
+<div class="group">
+<div class="flex justify-between items-center py-4 border-b border-outline-variant/10 group-hover:border-primary/40 transition-colors">
+<span class="font-label uppercase text-sm tracking-widest">Output Accuracy</span>
+<span class="font-headline font-bold text-primary">±1% to ±3%</span>
+</div>
+</div>
+<div class="group">
+<div class="flex justify-between items-center py-4 border-b border-outline-variant/10 group-hover:border-primary/40 transition-colors">
+<span class="font-label uppercase text-sm tracking-widest">Response Time</span>
+<span class="font-headline font-bold text-primary">&lt; 10 Milliseconds</span>
+</div>
+</div>
+<div class="group">
+<div class="flex justify-between items-center py-4 border-b border-outline-variant/10 group-hover:border-primary/40 transition-colors">
+<span class="font-label uppercase text-sm tracking-widest">Efficiency</span>
+<span class="font-headline font-bold text-primary">&gt; 98.5%</span>
+</div>
+</div>
+<div class="group">
+<div class="flex justify-between items-center py-4 border-b border-outline-variant/10 group-hover:border-primary/40 transition-colors">
+<span class="font-label uppercase text-sm tracking-widest">Distortion</span>
+<span class="font-headline font-bold text-primary">Zero Waveform Shift</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container rounded-xl p-1 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent">
+<div class="bg-surface rounded-lg p-10 h-full flex flex-col justify-center">
+<span class="material-symbols-outlined text-6xl text-primary-container mb-6" data-weight="fill">verified_user</span>
+<h4 class="font-headline text-2xl font-bold mb-4 uppercase">Solar-Link™ Integration</h4>
+<p class="text-on-surface-variant leading-relaxed mb-8">Unlike standard stabilizers, Helios units are tuned specifically for solar inverters, preventing the "cycling" effect that prematurely degrades lithium battery chemistry.</p>
+<div class="flex gap-4">
+<div class="px-4 py-2 bg-tertiary/10 rounded-full text-tertiary text-xs font-label">Lithium Optimized</div>
+<div class="px-4 py-2 bg-tertiary/10 rounded-full text-tertiary text-xs font-label">Grid-Tied Ready</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- WhatsApp Persistent Button -->
+<a class="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center justify-center group" href="https://wa.me/yournumber">
+<svg fill="currentColor" height="32" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.438-9.89 9.886-.001 2.15.613 3.941 1.632 5.492l-1.004 3.667 3.862-1.013zm8.473-10.552c-.3-.15-.4-.15-.458-.236-.058-.087-.058-.501-.058-1.5s-.358-1.226-.458-1.326c-.1-.1-.85-.15-1.25-.15s-.95.1-1.2.35c-.25.25-1.05 1.05-1.05 2.5s1.05 2.85 1.2 3.05c.15.2 2.05 3.15 4.95 4.4.7.3 1.25.45 1.65.6.7.2 1.35.15 1.85.1s1.15-.45 1.3-1 .15-1.05.1-1.15c-.05-.1-.2-.15-.5-.3z"></path></svg>
+<span class="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-3 transition-all duration-500 whitespace-nowrap font-headline font-bold uppercase text-sm tracking-widest">Chat with Expert</span>
+</a>
+<!-- Footer -->
+<footer class="w-full border-t border-white/5 bg-neutral-950">
+<div class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="text-neutral-600 font-['Space_Grotesk'] text-xs tracking-widest uppercase">
+                © 2024 HELIOS ENERGY. RADIANT MONOLITH SYSTEM.
+            </div>
+<div class="flex gap-8">
+<a class="text-neutral-600 hover:text-amber-500 transition-colors font-['Space_Grotesk'] text-xs tracking-widest uppercase" href="#">Privacy</a>
+<a class="text-neutral-600 hover:text-amber-500 transition-colors font-['Space_Grotesk'] text-xs tracking-widest uppercase" href="#">Terms</a>
+<a class="text-neutral-600 hover:text-amber-500 transition-colors font-['Space_Grotesk'] text-xs tracking-widest uppercase" href="#">Coordinates</a>
+</div>
+</div>
+</footer>
+</body></html>

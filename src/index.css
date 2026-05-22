@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #131313;
+    color: #e5e2e1;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: max(884px, 100dvh);
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.grain-overlay {
+  background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCfpttB_nyaFGLFs9WRNt4EeMm8nHRHoQlu0KkB0CpX3luJL0zIbCX2nbJkQTOtR97ZXaTb7iSSlsfg3ijf4hn0sVDZNQPJooeL-Sxui7mkZPAJLPgU7DgUee9M5dnmh6b1U7KpKv4X35N9mItLCMm02GHGzzhfUIIPDFu4bpfLDtFSFcbBgy5KmtCXFBERmeVZUWaf0xNou7yAakW7Cf6z0Qq08YlwKqIVensor3jnCGL0xsOXwBHREyxfcYhvIX5AtEapZg7lH2g");
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+.solar-gradient {
+  background: radial-gradient(circle at center, rgba(245, 166, 35, 0.15) 0%, transparent 70%);
+}
+
+.diagonal-cut {
+  clip-path: polygon(0 0, 85% 0, 100% 15%, 100% 100%, 0 100%);
+}
+
+/* Micro-interactions */
+button {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+button:hover {
+  transform: scale(1.03);
+}
+
+a {
+  transition: transform 0.3s ease;
+}
+a:hover {
+  transform: translateY(-1px);
+}

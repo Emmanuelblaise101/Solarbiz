@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@300;400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#ffb77c",
+                        "surface-tint": "#ffb955",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary": "#452b00",
+                        "on-secondary-container": "#432100",
+                        "secondary": "#ffb77c",
+                        "on-primary-fixed": "#291800",
+                        "surface-container-highest": "#353534",
+                        "secondary-fixed": "#ffdcc2",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#d7c3ae",
+                        "secondary-container": "#d97807",
+                        "on-tertiary-fixed": "#002114",
+                        "on-surface": "#e5e2e1",
+                        "tertiary": "#a0dfbe",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-dim": "#131313",
+                        "surface": "#131313",
+                        "primary-fixed-dim": "#ffb955",
+                        "primary": "#ffc880",
+                        "on-secondary-fixed": "#2e1500",
+                        "on-secondary-fixed-variant": "#6d3900",
+                        "inverse-surface": "#e5e2e1",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#633f00",
+                        "on-background": "#e5e2e1",
+                        "outline-variant": "#524534",
+                        "on-tertiary": "#003824",
+                        "on-tertiary-fixed-variant": "#0e5138",
+                        "primary-fixed": "#ffddb4",
+                        "on-tertiary-container": "#0f5138",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#201f1f",
+                        "inverse-primary": "#835500",
+                        "tertiary-fixed-dim": "#95d4b3",
+                        "inverse-on-surface": "#313030",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#b1f0ce",
+                        "on-primary-container": "#644000",
+                        "tertiary-container": "#85c3a3",
+                        "surface-variant": "#353534",
+                        "surface-bright": "#3a3939",
+                        "on-secondary": "#4d2700",
+                        "primary-container": "#f5a623",
+                        "outline": "#9f8e7a",
+                        "surface-container-high": "#2a2a2a",
+                        "background": "#131313"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Epilogue"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            }
+        }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.grain-texture {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAjrf9h9a821i0aMjNm9DjeBrpipi5fz-vX-jnjvKy7RvvGRy3LuxklsxcftTThJMkReizQwqsN933TmGl2D5-fWpqY3Do6n2qbnM5Gr2q-Xw4y7npJ8NejHHPpWHEVviBKdeyTbmzsBFPk4E_kcwzKr1dM9iQkcqKT-yfltacw4E0zLHsuybRKjl_LsGhc_CP2deS_kUl-ObXSiQI4jEbQemNksWTrrgKvQUQz6hPE31hUxa6E64_yqrURmnLGnY_6s8mXgf2gwuk);
+    opacity: 0.03;
+    pointer-events: none
+    }
+.solar-glass {
+    background: rgba(53, 53, 52, 0.6);
+    backdrop-filter: blur(24px)
+    }
+.diagonal-cut {
+    clip-path: polygon(0 0, 85% 0, 100% 15%, 100% 100%, 0 100%)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<div class="fixed inset-0 grain-texture z-[100]"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-neutral-950/60 backdrop-blur-3xl shadow-[0_8px_30px_rgb(245,166,35,0.1)] h-20 flex justify-between items-center px-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-amber-500 text-3xl">solar_power</span>
+<h1 class="font-['Epilogue'] tracking-tighter uppercase font-bold text-2xl font-black text-amber-500">HELIOS</h1>
+</div>
+<nav class="hidden md:flex gap-10">
+<a class="font-['Epilogue'] tracking-tighter uppercase font-bold text-neutral-400 hover:text-amber-400 transition-colors duration-300" href="#">Generation</a>
+<a class="font-['Epilogue'] tracking-tighter uppercase font-bold text-amber-500 hover:text-amber-400 transition-colors duration-300" href="#">Storage</a>
+<a class="font-['Epilogue'] tracking-tighter uppercase font-bold text-neutral-400 hover:text-amber-400 transition-colors duration-300" href="#">Impact</a>
+<a class="font-['Epilogue'] tracking-tighter uppercase font-bold text-neutral-400 hover:text-amber-400 transition-colors duration-300" href="#">Contact</a>
+</nav>
+<button class="material-symbols-outlined text-amber-500 active:scale-95 transition-transform text-3xl">menu</button>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[707px] flex items-center px-8 py-20 overflow-hidden">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-container/10 blur-[120px] rounded-full -z-10"></div>
+<div class="grid lg:grid-cols-2 gap-16 items-center w-full max-w-7xl mx-auto">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-full">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label text-xs tracking-widest uppercase text-tertiary">Storage Solutions 2.0</span>
+</div>
+<h2 class="font-headline text-6xl md:text-8xl font-black tracking-tighter leading-none">THE<br/><span class="text-primary">STORAGE</span><br/>MONOLITH.</h2>
+<p class="text-xl text-on-surface-variant max-w-md leading-relaxed">High-performance energy reserves engineered for the Nigerian climate. Transition from grid dependency to total energy sovereignty.</p>
+<div class="flex flex-wrap gap-6">
+<button class="px-8 py-4 bg-primary-container text-on-primary-container font-headline font-bold rounded-md shadow-[inset_0_1px_0_rgba(255,255,255,0.4)] hover:brightness-110 transition-all">Explore Lithium</button>
+<button class="px-8 py-4 border border-outline-variant text-on-surface font-headline font-bold rounded-md hover:bg-white/5 transition-all">View Tubular</button>
+</div>
+</div>
+<div class="relative">
+<div class="diagonal-cut bg-surface-container-low p-4 aspect-square flex items-center justify-center">
+<img class="w-full h-full object-cover rounded-lg shadow-2xl" data-alt="Premium 3D render of a sleek black and gold lithium battery pack in a dark architectural studio setting with cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxdsQ9nRKj-YziO7wVw0ehXoUyw1MN0ZCjcakS6qZ-vl95bqJ7aR8vBBLTqkCp2-95mLDPpi5KlcOVU_zBrSc3QwYq9ariiOq_RSkvNARoJCdOclzTeDA4-G6JobVesuXMebbbf8FBi4ofXAX8fDui_ghVWjuVClPaF1D3Pd82WoZ-h2tjJx03apM1YkkymOD8xaboCvu0XdOtd3erw4TV6vFfjPpQdLFoL7yH0FIleBFfJgToIlKdXdyOx8hJsZK2JvYLtAGOwr0"/>
+</div>
+<div class="absolute -bottom-8 -right-8 bg-surface-container-highest/80 backdrop-blur-xl p-8 rounded-lg shadow-2xl border border-white/5">
+<p class="font-label text-4xl font-bold text-primary">₦2,450,000</p>
+<p class="font-label text-xs tracking-widest text-on-surface-variant uppercase mt-1">Starting Price / LiFePO4</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Specs Bento -->
+<section class="bg-surface-container-low py-32 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="grid md:grid-cols-3 gap-8">
+<!-- LiFePO4 Deep Dive -->
+<div class="md:col-span-2 bg-surface p-12 rounded-lg relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+<div class="relative z-10 flex flex-col h-full">
+<span class="material-symbols-outlined text-primary text-5xl mb-8" style="font-variation-settings: 'FILL' 1;">battery_charging_full</span>
+<h3 class="font-headline text-4xl font-bold mb-6">Lithium-ion (LiFePO4)</h3>
+<p class="text-on-surface-variant mb-12 max-w-lg">The pinnacle of solar storage technology. High energy density, rapid charging, and zero maintenance for the modern estate.</p>
+<div class="grid grid-cols-2 gap-8 mt-auto">
+<div>
+<p class="font-label text-xs uppercase tracking-widest text-neutral-500 mb-1">Capacity</p>
+<p class="font-headline text-3xl font-bold">100Ah - 300Ah</p>
+</div>
+<div>
+<p class="font-label text-xs uppercase tracking-widest text-neutral-500 mb-1">Cycle Life</p>
+<p class="font-headline text-3xl font-bold">6,000+</p>
+</div>
+<div>
+<p class="font-label text-xs uppercase tracking-widest text-neutral-500 mb-1">Warranty</p>
+<p class="font-headline text-3xl font-bold">10 Years</p>
+</div>
+<div>
+<p class="font-label text-xs uppercase tracking-widest text-neutral-500 mb-1">Depth of Discharge</p>
+<p class="font-headline text-3xl font-bold">95%</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Tubular Card -->
+<div class="bg-surface-container-high p-12 rounded-lg flex flex-col justify-between border border-white/5">
+<div>
+<span class="material-symbols-outlined text-on-surface-variant text-5xl mb-8">reorder</span>
+<h3 class="font-headline text-4xl font-bold mb-6">Tubular Master</h3>
+<p class="text-on-surface-variant mb-8">Rugged, dependable, and cost-effective deep-cycle technology for long-duration backups.</p>
+</div>
+<div class="space-y-6">
+<div class="flex justify-between items-end border-b border-white/10 pb-4">
+<span class="font-label text-xs uppercase tracking-tighter text-neutral-500">Cycles</span>
+<span class="font-headline text-xl font-bold text-secondary">2,500</span>
+</div>
+<div class="flex justify-between items-end border-b border-white/10 pb-4">
+<span class="font-label text-xs uppercase tracking-tighter text-neutral-500">Capacity</span>
+<span class="font-headline text-xl font-bold text-secondary">220Ah</span>
+</div>
+<div class="flex justify-between items-end border-b border-white/10 pb-4">
+<span class="font-label text-xs uppercase tracking-tighter text-neutral-500">Starting at</span>
+<span class="font-headline text-xl font-bold text-secondary">₦380,000</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Showcase Asymmetry -->
+<section class="py-32 px-8 bg-surface">
+<div class="max-w-7xl mx-auto space-y-40">
+<!-- Product Row 1 -->
+<div class="flex flex-col md:flex-row gap-20 items-center">
+<div class="flex-1 order-2 md:order-1">
+<img class="w-full rounded-lg shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" data-alt="Interior of a modern high-tech utility room with stacked solar battery cabinets glowing with soft LED indicators" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfuOV4hbFqsyvk1y2ghwfKB-b7FNTiZWQzGmYVrI6GG366_ctwhRAR1x4feri8A3Zx-bhND-jneYcyNOCwgX-vYkpbOEcgc6zvvITfsDnG7JCb6A27etH2304o6S1VrA5mIN8Fg5nr-2hmGr2qhgHAoqB9OKNLsrA6thhC0sjgecIS0WkyGSLnmBc4lOq1QysSxw4B8mSFQEv9D2KqO-JeEWrvUshDzGeHLnpcYVsmPI3mrx-YdMaUgarw-TVZG4pYAmkaumht2v4"/>
+</div>
+<div class="flex-1 order-1 md:order-2 space-y-8">
+<h4 class="font-headline text-5xl font-extrabold tracking-tighter">HELIOS ION-5</h4>
+<p class="text-xl text-on-surface-variant leading-relaxed">Specifically tuned for the variable frequencies of Nigerian power grids. Includes a built-in Smart-BMS with cloud monitoring capabilities.</p>
+<ul class="space-y-4 font-label">
+<li class="flex items-center gap-4 text-primary">
+<span class="material-symbols-outlined">bolt</span>
+                                5.12kWh Expandable Storage
+                            </li>
+<li class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined text-neutral-600">thermostat</span>
+                                Advanced Thermal Management
+                            </li>
+<li class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined text-neutral-600">verified</span>
+                                Tier-1 Grade cells only
+                            </li>
+</ul>
+</div>
+</div>
+<!-- Product Row 2 -->
+<div class="flex flex-col md:flex-row gap-20 items-center">
+<div class="flex-1 space-y-8">
+<h4 class="font-headline text-5xl font-extrabold tracking-tighter">TUBULAR TITAN</h4>
+<p class="text-xl text-on-surface-variant leading-relaxed">The workhorse of industrial solar. Tall tubular design with heavy-duty plates for maximum reliability in high-heat environments.</p>
+<div class="p-8 bg-surface-container-low rounded-lg border-l-4 border-amber-500">
+<p class="font-label italic text-on-surface">"The most resilient battery we've ever tested for the Lagos coastal humidity."</p>
+<p class="font-label text-xs uppercase tracking-widest text-primary mt-4">— Technical Director, SolarBiz</p>
+</div>
+</div>
+<div class="flex-1">
+<img class="w-full rounded-lg shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" data-alt="Close-up of industrial tubular batteries in a clean warehouse, showing the high-quality terminals and robust casing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfB8iDjmoSVGRxpvEgcDjV0rhpRASvhEiiqzclvhnKUjo1f1hdzIJPuTpg6RZn9KnBP8G5NoN8uEYR3Zoj-P-TIv0XuqC_ME73m7Y0h_FBZLdOTeIbYCQlWyKNQAvLQ6TcDhGbnh90Z35_ep7Ae3YabedpBjSqx3J1oqL2WpQgjXqOFBAGIdvzPwsDlahP0reu1sK1E1g9O9GZU206KiBm_wGZ5nDciCwdEc-lQbh3RdyMypGnLcgvVz73WkWlWg2Qid934Fu6lDQ"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-white/5 bg-neutral-950 py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-['Space_Grotesk'] text-xs tracking-widest uppercase text-neutral-600">© 2024 HELIOS ENERGY. RADIANT MONOLITH SYSTEM.</p>
+<div class="flex gap-8">
+<a class="font-['Space_Grotesk'] text-xs tracking-widest uppercase text-neutral-600 hover:text-amber-500 transition-colors" href="#">Privacy</a>
+<a class="font-['Space_Grotesk'] text-xs tracking-widest uppercase text-neutral-600 hover:text-amber-500 transition-colors" href="#">Terms</a>
+<a class="font-['Space_Grotesk'] text-xs tracking-widest uppercase text-neutral-600 hover:text-amber-500 transition-colors" href="#">Coordinates</a>
+</div>
+</footer>
+<!-- WhatsApp Button -->
+<a class="fixed bottom-8 right-8 z-[70] bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center gap-3" href="https://wa.me/yournumber">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.483 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.308 1.656zm6.29-4.151c1.52.906 3.035 1.358 4.605 1.358 5.425 0 9.845-4.417 9.845-9.847 0-2.628-1.024-5.1-2.885-6.957-1.856-1.857-4.329-2.88-6.961-2.882-5.431 0-9.85 4.419-9.854 9.842 0 1.732.447 3.421 1.292 4.887l-.95 3.467 3.555-.933zm11.332-5.473c-.298-.149-1.762-.87-2.035-.97s-.472-.149-.67.149c-.198.298-.77.97-.944 1.168-.173.199-.347.223-.644.074-.297-.15-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.762-.719 2.01-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path></svg>
+<span class="font-headline font-bold text-sm tracking-tight">Chat with SolarBiz</span>
+</a>
+</body></html>

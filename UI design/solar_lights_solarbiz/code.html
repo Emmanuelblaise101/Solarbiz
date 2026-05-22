@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HELIOS | Premium Solar Illumination</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#ffb77c",
+                        "surface-tint": "#ffb955",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary": "#452b00",
+                        "on-secondary-container": "#432100",
+                        "secondary": "#ffb77c",
+                        "on-primary-fixed": "#291800",
+                        "surface-container-highest": "#353534",
+                        "secondary-fixed": "#ffdcc2",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#d7c3ae",
+                        "secondary-container": "#d97807",
+                        "on-tertiary-fixed": "#002114",
+                        "on-surface": "#e5e2e1",
+                        "tertiary": "#a0dfbe",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-dim": "#131313",
+                        "surface": "#131313",
+                        "primary-fixed-dim": "#ffb955",
+                        "primary": "#ffc880",
+                        "on-secondary-fixed": "#2e1500",
+                        "on-secondary-fixed-variant": "#6d3900",
+                        "inverse-surface": "#e5e2e1",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#633f00",
+                        "on-background": "#e5e2e1",
+                        "outline-variant": "#524534",
+                        "on-tertiary": "#003824",
+                        "on-tertiary-fixed-variant": "#0e5138",
+                        "primary-fixed": "#ffddb4",
+                        "on-tertiary-container": "#0f5138",
+                        "on-error-container": "#ffdad6",
+                        "surface-container": "#201f1f",
+                        "inverse-primary": "#835500",
+                        "tertiary-fixed-dim": "#95d4b3",
+                        "inverse-on-surface": "#313030",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#b1f0ce",
+                        "on-primary-container": "#644000",
+                        "tertiary-container": "#85c3a3",
+                        "surface-variant": "#353534",
+                        "surface-bright": "#3a3939",
+                        "on-secondary": "#4d2700",
+                        "primary-container": "#f5a623",
+                        "outline": "#9f8e7a",
+                        "surface-container-high": "#2a2a2a",
+                        "background": "#131313"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Epilogue"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>body {
+    font-family: "Plus Jakarta Sans", sans-serif
+    }
+.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCfPw3ds7oP1JxrhTB2cMWBSnwrU1jSO2FlArr38-RPx0pjNRQ8vOV12kjFNJ0DUk6aoi6RISs-9H-F1-VzBjebDCXJNNqRK7GyP2oYOKliBALOdf1qiTEPIOGadR_VPbJXDo6gfp44CA0ftztvaoodwQ6RoMYQ2J6TMt6aSf4mvlb0m00pbcWUhX38jPg4JNQ4TUTubU76hHNHYnt0FJioPJgRf6fJFUklrM36oKwAmdFXFq2H0iGOYlA_cVEDbbM1RcGECdBZDcw);
+    opacity: 0.03;
+    pointer-events: none
+    }
+.solar-glass {
+    backdrop-filter: blur(24px);
+    background: rgba(53, 53, 52, 0.6)
+    }
+.signature-cut {
+    clip-path: polygon(0 0, 85% 0, 100% 15%, 100% 100%, 0 100%)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background selection:bg-primary/30 min-h-screen">
+<div class="fixed inset-0 grain-overlay z-[100]"></div>
+<!-- TopAppBar -->
+<header class="bg-neutral-950/60 backdrop-blur-3xl fixed top-0 w-full z-50 shadow-[0_8px_30px_rgb(245,166,35,0.1)]">
+<div class="flex justify-between items-center px-8 h-20 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-amber-500 text-3xl" style="font-variation-settings: 'FILL' 1;">solar_power</span>
+<span class="text-2xl font-black tracking-tighter text-amber-500 font-['Epilogue'] uppercase">HELIOS</span>
+</div>
+<nav class="hidden md:flex gap-12 font-['Epilogue'] tracking-tighter uppercase font-bold">
+<a class="text-neutral-400 hover:text-amber-400 transition-colors duration-300" href="#">Generation</a>
+<a class="text-neutral-400 hover:text-amber-400 transition-colors duration-300" href="#">Storage</a>
+<a class="text-amber-500 transition-colors duration-300" href="#">Impact</a>
+<a class="text-neutral-400 hover:text-amber-400 transition-colors duration-300" href="#">Contact</a>
+</nav>
+<button class="active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-amber-500 text-2xl">menu</span>
+</button>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[707px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-50" data-alt="Modern architectural house exterior at dusk illuminated by sleek solar powered garden lights casting warm amber glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfiV9YEuubJwKBgLylY1J2-HJR4gQ86lJ9j0AAskIiwU3DLxvHlwOvY8_fWZ8k6ZB3hEpCSTMZVqqtjDe6m3WCK3LRi8eIVFdNYgS1MJjLwi8R8a_uahi4QSwL581XG6inTLwyT1fHi_xB1Kx6uRpeS3YZM0lqZFTMrvdvUmNpOYkpbR-RBiLG20P_eRi75mwPLFHk95zKLH3Pq6oKCS8VqrBcIlSmzdKS1fPOx0AQzSr2H7LOtPu3xS89XjhVmuM2KxPJt5NjNGE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent"></div>
+</div>
+<div class="container mx-auto px-8 relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8">
+<div class="md:col-span-8">
+<h1 class="font-headline text-6xl md:text-8xl font-extrabold tracking-tighter leading-none mb-6">
+                        RADIANT <br/><span class="text-primary">LUMINANCE.</span>
+</h1>
+<p class="font-body text-xl text-on-surface-variant max-w-xl mb-10 leading-relaxed">
+                        Harness the sun’s ultimate potential. Our monolithic lighting systems integrate high-efficiency photovoltaic cells with sculptural industrial design.
+                    </p>
+<div class="flex gap-6">
+<button class="bg-primary-container text-on-primary-container px-10 py-5 rounded-md font-headline font-bold text-lg hover:shadow-[0_0_20px_rgba(245,166,35,0.4)] transition-all">
+                            EXPLORE THE ARRAY
+                        </button>
+<button class="border border-outline-variant hover:bg-white/5 px-10 py-5 rounded-md font-headline font-bold text-lg transition-all">
+                            SYSTEM SPECS
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Grid - Bento Style -->
+<section class="py-24 bg-surface-container-low relative">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent"></div>
+<div class="container mx-auto px-8">
+<div class="flex justify-between items-end mb-16">
+<div>
+<span class="font-label text-primary tracking-[0.3em] uppercase text-sm mb-4 block">Collection 2024</span>
+<h2 class="font-headline text-5xl font-bold tracking-tight">The Light Catalogue</h2>
+</div>
+<div class="hidden md:block font-label text-on-surface-variant text-right">
+                        LOC: 06°27′11″N 03°23′45″E<br/>
+                        SOLAR ALT: 42.5°
+                    </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Featured: Street Light -->
+<div class="md:col-span-2 bg-surface-container-highest signature-cut p-1 relative group overflow-hidden">
+<div class="bg-surface-container h-full w-full p-8 flex flex-col md:flex-row gap-8">
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="inline-flex bg-tertiary-container/20 text-tertiary px-3 py-1 rounded-full text-xs font-label mb-6">ULTRA PERFORMANCE</div>
+<h3 class="font-headline text-4xl font-bold mb-4">Aura Titan X1</h3>
+<p class="font-body text-on-surface-variant mb-8">Industrial-grade street lighting with intelligent motion sensing and 360° solar absorption panels.</p>
+<div class="grid grid-cols-2 gap-6 mb-8">
+<div>
+<p class="font-label text-[10px] text-neutral-500 uppercase tracking-widest">Brightness</p>
+<p class="font-label text-xl text-primary">12,000 LM</p>
+</div>
+<div>
+<p class="font-label text-[10px] text-neutral-500 uppercase tracking-widest">IP Rating</p>
+<p class="font-label text-xl text-primary">IP67</p>
+</div>
+<div>
+<p class="font-label text-[10px] text-neutral-500 uppercase tracking-widest">Battery</p>
+<p class="font-label text-xl text-primary">48H RESERVE</p>
+</div>
+<div>
+<p class="font-label text-[10px] text-neutral-500 uppercase tracking-widest">Warranty</p>
+<p class="font-label text-xl text-primary">5 YEARS</p>
+</div>
+</div>
+</div>
+<div class="text-4xl font-headline font-black text-on-surface">₦450,000</div>
+</div>
+<div class="flex-1 rounded-lg overflow-hidden relative min-h-[300px]">
+<img class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Sleek modern minimal black solar street light fixture against clear night sky with stars" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1LStYhrID692AreyuoBl4NBdWQZ8z-Ro66U0oeo7AeWttscXljrxxtFpj2lTu0v15OWW-tnaVzoYuoCpCm6W2zFHYg3mWhRv0TbifqKpvcCwV1qlA5SgN5xdbgQSxw3-ry6yr54gKIHyqo6DPHMSxXHWa7eBMX_g9ctbL5gQQe3f-duDE6qHF7_0iiT8qKm-nXZ-B69P9qsbFkWVs8kcV20h0wmd2GQxc5MaUCXDJ2S0T0YX3HKyKnWEvR1ZzNGbqnHG95LYLURo"/>
+</div>
+</div>
+</div>
+<!-- Floodlight -->
+<div class="bg-surface-container-high rounded-lg p-8 flex flex-col justify-between hover:bg-surface-container-highest transition-colors">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6">bolt</span>
+<h3 class="font-headline text-2xl font-bold mb-2">Solar Flood XL</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6">Pure architectural security. Broad beam coverage with dusk-to-dawn automation.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex justify-between border-b border-white/5 pb-2">
+<span class="font-label text-xs text-neutral-500">OUTPUT</span>
+<span class="font-label text-xs text-on-surface">5,000 LUMENS</span>
+</li>
+<li class="flex justify-between border-b border-white/5 pb-2">
+<span class="font-label text-xs text-neutral-500">COVERAGE</span>
+<span class="font-label text-xs text-on-surface">150m²</span>
+</li>
+<li class="flex justify-between border-b border-white/5 pb-2">
+<span class="font-label text-xs text-neutral-500">BUILD</span>
+<span class="font-label text-xs text-on-surface">DIE-CAST ALUM</span>
+</li>
+</ul>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-2xl font-headline font-bold text-primary">₦85,000</span>
+<button class="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Garden Light -->
+<div class="bg-surface-container-high rounded-lg p-8 flex flex-col justify-between hover:bg-surface-container-highest transition-colors">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6">wb_sunny</span>
+<h3 class="font-headline text-2xl font-bold mb-2">Zen Garden Spike</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6">Atmospheric accent lighting. Frosted glass and brushed obsidian finish.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex justify-between border-b border-white/5 pb-2">
+<span class="font-label text-xs text-neutral-500">LUMENS</span>
+<span class="font-label text-xs text-on-surface">400 LM</span>
+</li>
+<li class="flex justify-between border-b border-white/5 pb-2">
+<span class="font-label text-xs text-neutral-500">COLOR</span>
+<span class="font-label text-xs text-on-surface">3000K WARM</span>
+</li>
+<li class="flex justify-between border-b border-white/5 pb-2">
+<span class="font-label text-xs text-neutral-500">CELL TYPE</span>
+<span class="font-label text-xs text-on-surface">MONO-CRYSTALLINE</span>
+</li>
+</ul>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-2xl font-headline font-bold text-primary">₦28,000</span>
+<button class="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Industrial Floodlight -->
+<div class="md:col-span-2 bg-surface-container rounded-lg p-8 grid md:grid-cols-2 gap-8 items-center border border-white/5">
+<div class="rounded-xl overflow-hidden aspect-video">
+<img class="w-full h-full object-cover" data-alt="Commercial warehouse exterior equipped with heavy duty industrial solar floodlights showing wide beam angle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfTB2lz0mRSuA6xp8xTfcfRnrFqwhn-L5FDnU-3KgXfxEM5flKSWQVnZxj_b_ZOYq4njMopGU1nPIAB0_VobCxa9FzMtSy4ZNaAnTUjmgm7AinDvWSDfQx5GiM2EnJGfZK6mmnJXotLdsJIsPdEVx_TwQqsr1d5Gk7uElqV2hkvpuXJrCKmbatQ6Od6t6FkkoVd0RCU85xMUzzbi2LX3K2aCVg1rM58M0O9ATPJnl8xJ-_cI_tIZy7gKsxXIA4RpmlFkkNXhZqTkk"/>
+</div>
+<div>
+<h3 class="font-headline text-3xl font-bold mb-4">Magnum Flood Pro</h3>
+<p class="font-body text-on-surface-variant mb-6">Designed for stadium and parking lot utility. The most powerful autonomous light in the Helios fleet.</p>
+<div class="flex items-center gap-10 mb-8">
+<div>
+<p class="font-label text-[10px] text-neutral-500 uppercase">Output</p>
+<p class="font-label text-2xl text-on-surface">25,000 LM</p>
+</div>
+<div>
+<p class="font-label text-[10px] text-neutral-500 uppercase">Protection</p>
+<p class="font-label text-2xl text-on-surface">IP68</p>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary font-headline font-bold rounded-md active:scale-95 transition-all">
+                                REQUEST CUSTOM QUOTE — ₦1,200,000
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Excellence Section -->
+<section class="py-24 bg-surface relative overflow-hidden">
+<div class="container mx-auto px-8 relative z-10">
+<div class="grid md:grid-cols-2 gap-20 items-center">
+<div>
+<h2 class="font-headline text-5xl font-black tracking-tighter mb-8 leading-tight">THE SCIENCE OF <br/>SOLAR SUPREMACY</h2>
+<div class="space-y-12">
+<div class="flex gap-6">
+<div class="bg-primary/10 w-16 h-16 rounded-xl flex items-center justify-center shrink-0 border border-primary/20">
+<span class="material-symbols-outlined text-primary text-3xl">battery_charging_full</span>
+</div>
+<div>
+<h4 class="font-headline text-xl font-bold mb-2">LiFePO4 Energy Density</h4>
+<p class="font-body text-on-surface-variant">Military-grade battery technology ensuring over 3000 charge cycles and peak performance in high-temperature environments.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="bg-primary/10 w-16 h-16 rounded-xl flex items-center justify-center shrink-0 border border-primary/20">
+<span class="material-symbols-outlined text-primary text-3xl">cloud_queue</span>
+</div>
+<div>
+<h4 class="font-headline text-xl font-bold mb-2">All-Weather Resilience</h4>
+<p class="font-body text-on-surface-variant">Tempered glass and aerospace-grade aluminum bodies rated to withstand hurricane-force winds and tropical downpours.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -inset-10 bg-primary/10 blur-[100px] rounded-full"></div>
+<img class="relative z-10 rounded-2xl grayscale brightness-75 hover:grayscale-0 transition-all duration-700 signature-cut" data-alt="Close up of high quality solar panel texture showing geometric blue cell patterns with sunlight reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDju5L7c7mn3WmElpwNp0Vy-_G33zC5c6PziO6bcT_1DYiT-7mcJNg41Js1w2Z6a7Cajb8r6ZKCkfQ5KoLZn1D7WlNz7zrfsMJEOBitEhh8JxJ5ht8i1w6KJ1xWYZ3d7hfxmw17-rxMjYD09qk0KP5pCFd1BUYUqv_siEyBC58D6VKYw4anZb08GrLJZCR2hlFDXJHEpwzRWaXwZoZtymrhacoLQ1xnnjhcmq6SlXw2B0gE4-rZZyxbN4Ppqrm5aBuFGrsAFCtMDIs"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-neutral-950 w-full border-t border-white/5">
+<div class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-['Space_Grotesk'] text-xs tracking-widest uppercase text-neutral-600">
+                © 2024 HELIOS ENERGY. RADIANT MONOLITH SYSTEM.
+            </p>
+<div class="flex gap-10 font-['Space_Grotesk'] text-xs tracking-widest uppercase text-neutral-600">
+<a class="hover:text-amber-200 transition-colors" href="#">Privacy</a>
+<a class="hover:text-amber-200 transition-colors" href="#">Terms</a>
+<a class="hover:text-amber-200 transition-colors" href="#">Coordinates</a>
+</div>
+</div>
+</footer>
+<!-- WhatsApp FAB -->
+<a class="fixed bottom-8 right-8 z-[70] bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all group flex items-center gap-2" href="https://wa.me/yournumber">
+<svg class="w-8 h-8 fill-current" viewbox="0 0 24 24">
+<path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.538-2.961-2.654-.087-.116-.708-.941-.708-1.796 0-.855.449-1.277.608-1.45.16-.174.347-.217.462-.217.116 0 .232.001.333.006.106.005.249-.04.391.298.144.347.491 1.202.535 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.777 1.394.864.174.088.275.073.376-.044.101-.116.434-.506.549-.68.116-.174.231-.145.39-.087.158.058 1.012.477 1.185.564.174.087.289.13.333.202.043.073.043.419-.101.824z"></path>
+</svg>
+<span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 font-headline font-bold whitespace-nowrap px-0 group-hover:px-2">WHATSAPP US</span>
+</a>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-neutral-950/80 backdrop-blur-xl border-t border-white/5 z-50 flex justify-around items-center px-4">
+<a class="flex flex-col items-center text-amber-500" href="#">
+<span class="material-symbols-outlined">wb_sunny</span>
+<span class="text-[10px] font-label mt-1">GENERATION</span>
+</a>
+<a class="flex flex-col items-center text-neutral-500" href="#">
+<span class="material-symbols-outlined">battery_charging_full</span>
+<span class="text-[10px] font-label mt-1">STORAGE</span>
+</a>
+<a class="flex flex-col items-center text-neutral-500" href="#">
+<span class="material-symbols-outlined">eco</span>
+<span class="text-[10px] font-label mt-1">IMPACT</span>
+</a>
+<a class="flex flex-col items-center text-neutral-500" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="text-[10px] font-label mt-1">CONTACT</span>
+</a>
+</nav>
+</body></html>
