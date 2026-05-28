@@ -181,7 +181,7 @@ export const WhatsAppCTA = () => {
   return (
     <div className="fixed bottom-8 right-8 z-[60]">
       <a 
-        href="https://wa.me/23481437077713?text=Hello%20SolarBiz!%20I%20am%20interested%20in%20getting%20a%20solar%20quote." 
+        href="https://wa.me/2348137077713?text=Hello%20SolarBiz!%20I%20am%20interested%20in%20getting%20a%20solar%20quote." 
         target="_blank" 
         rel="noopener noreferrer"
         className="relative bg-[#25D366] text-white p-4 rounded-full shadow-[0_10px_30px_rgba(37,211,102,0.4)] flex items-center justify-center hover:scale-110 transition-transform"

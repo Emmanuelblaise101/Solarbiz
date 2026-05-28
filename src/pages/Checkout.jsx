@@ -304,7 +304,7 @@ const Checkout = () => {
                     </div>
                     <div className="bg-amber-500/10 p-4 rounded-md border border-amber-500/30 flex gap-3 text-left">
                       <span className="material-symbols-outlined text-amber-500 text-sm mt-0.5">info</span>
-                      <p className="text-xs text-amber-500 font-body leading-relaxed">After completing the transfer, please send the payment receipt via WhatsApp to <span className="font-bold">+23481437077713</span> referencing your order number.</p>
+                      <p className="text-xs text-amber-500 font-body leading-relaxed">After completing the transfer, please send the payment receipt via WhatsApp to <span className="font-bold">+2348137077713</span> referencing your order number.</p>
                     </div>
                   </div>
                 )}
