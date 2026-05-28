@@ -114,7 +114,44 @@ export const Navbar = () => {
           <NavLink to="/solar-lights" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold text-2xl transition-colors ${isActive ? 'text-amber-500' : 'text-on-surface hover:text-amber-500'}`}>Solar Lights</NavLink>
           <NavLink to="/stabilizers" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold text-2xl transition-colors ${isActive ? 'text-amber-500' : 'text-on-surface hover:text-amber-500'}`}>Stabilizers</NavLink>
           
-          <div className="pt-8 border-t border-outline-variant/20">
+          {/* Mobile Auth / Logout actions */}
+          <div className="pt-6 border-t border-outline-variant/10 flex flex-col gap-4">
+            {!isAuthenticated ? (
+              <button 
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  setAuthDefaultTab('login');
+                  setIsAuthModalOpen(true);
+                }}
+                className="w-full bg-neutral-800 border border-white/5 text-white py-3.5 rounded-md font-headline font-bold uppercase tracking-widest text-sm hover:bg-neutral-700 active:scale-95 transition-all text-center"
+              >
+                Log In / Sign Up
+              </button>
+            ) : (
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 bg-neutral-800/40 border border-white/5 rounded-xl p-3">
+                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-headline font-bold text-base">
+                    {user?.name.charAt(0).toUpperCase()}
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="font-headline font-bold text-white text-sm truncate">{user?.name}</p>
+                    <p className="font-body text-xs text-neutral-400 truncate">{user?.email}</p>
+                  </div>
+                </div>
+                <button 
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    handleLogout();
+                  }}
+                  className="w-full bg-red-950/20 border border-red-900/30 text-red-500 py-3.5 rounded-md font-headline font-bold uppercase tracking-widest text-sm hover:bg-red-900/10 active:scale-95 transition-all text-center"
+                >
+                  Log Out
+                </button>
+              </div>
+            )}
+          </div>
+
+          <div className="pt-6 border-t border-outline-variant/20">
             <button 
               onClick={() => {
                 setIsMobileMenuOpen(false);
