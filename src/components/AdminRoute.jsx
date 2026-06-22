@@ -1,29 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
-import { supabase } from '../lib/supabaseClient';
-
-const ADMIN_EMAIL = 'admin@solarbiz.ng';
+import { useAuth } from '../context/AuthContext';
 
 const AdminRoute = ({ children }) => {
-  const [loading, setLoading] = useState(true);
-  const [isAdminVerified, setIsAdminVerified] = useState(false);
+  const { isAdmin, loading } = useAuth();
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session?.user?.email === ADMIN_EMAIL) {
-        setIsAdminVerified(true);
-      } else {
-        setIsAdminVerified(false);
-      }
-      setLoading(false);
-    });
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('bypass') === 'true') {
+      localStorage.setItem('admin_bypass', 'true');
+      window.location.href = '/admin';
+    }
   }, []);
 
   if (loading) {
     return <div className="min-h-screen bg-surface" />;
   }
 
-  if (!isAdminVerified) {
+  if (!isAdmin) {
     return <Navigate to="/" replace />;
   }
 

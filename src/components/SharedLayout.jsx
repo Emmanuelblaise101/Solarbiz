@@ -11,7 +11,7 @@ export const Navbar = () => {
   const navigate = useNavigate();
   const { openQuote } = useQuote();
   const { cartCount } = useCart();
-  const { isAuthenticated, user, logout } = useAuth();
+  const { isAuthenticated, user, logout, isAdmin } = useAuth();
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [authDefaultTab, setAuthDefaultTab] = useState('login');
 
@@ -75,6 +75,14 @@ export const Navbar = () => {
               <span className="font-headline font-bold text-sm text-white">{user?.name.split(' ')[0]}</span>
             </button>
             <div className="absolute right-0 top-full mt-2 w-48 bg-surface-container-highest border border-white/5 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
+              {isAdmin && (
+                <NavLink 
+                  to="/admin" 
+                  className="block w-full text-left px-4 py-2 text-sm font-body text-amber-500 hover:bg-white/5 transition-colors font-bold"
+                >
+                  Admin Console
+                </NavLink>
+              )}
               <button className="w-full text-left px-4 py-2 text-sm font-body text-neutral-400 hover:text-white hover:bg-white/5">My Account</button>
               <button 
                 onClick={handleLogout}
@@ -138,6 +146,15 @@ export const Navbar = () => {
                     <p className="font-body text-xs text-neutral-400 truncate">{user?.email}</p>
                   </div>
                 </div>
+                {isAdmin && (
+                  <NavLink 
+                    to="/admin" 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block w-full bg-amber-500/10 border border-amber-500/20 text-amber-500 py-3.5 rounded-md font-headline font-bold uppercase tracking-widest text-sm hover:bg-amber-500/20 active:scale-95 transition-all text-center"
+                  >
+                    Admin Console
+                  </NavLink>
+                )}
                 <button 
                   onClick={() => {
                     setIsMobileMenuOpen(false);

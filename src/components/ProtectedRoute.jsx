@@ -4,9 +4,13 @@ import { useAuth } from '../context/AuthContext';
 import { AuthModal } from './AuthModal';
 
 export const ProtectedRoute = () => {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, loading } = useAuth();
   const [modalOpen, setModalOpen] = useState(false);
   const [defaultTab, setDefaultTab] = useState('login');
+
+  if (loading) {
+    return <div className="min-h-screen bg-background" />;
+  }
 
   if (isAuthenticated) {
     return <Outlet />;
