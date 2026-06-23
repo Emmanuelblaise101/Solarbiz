@@ -108,20 +108,16 @@ export default function DataGridHero({
     <div
       className={`data-grid-hero ${className}`}
       style={{
+        background: "transparent",
         ...style,
-        ...(background && background !== "transparent" ? { background } : {}),
       }}
       {...rest}
     >
       <div
-        className="absolute inset-0 bg-black/35 pointer-events-none"
-        style={{ zIndex: 0 }}
-      />
-      <div
         ref={gridRef}
         className="grid-container"
         aria-hidden="true"
-        style={{ zIndex: 1 }}
+        style={{ zIndex: 1, background: "transparent" }}
       />
       <div
         className={`hero-content ${contentClassName}`}

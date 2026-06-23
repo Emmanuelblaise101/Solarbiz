@@ -27,46 +27,51 @@ const Home = () => {
   return (
     <>
       {/* Hero Section */}
-      <DataGridHero
-        rows={20}
-        cols={30}
-        spacing={2}
-        duration={3}
-        color="#F5A623"
-        animationType="wave"
-        pulseEffect={true}
-        mouseGlow={true}
-        opacityMin={0.03}
-        opacityMax={0.18}
-        background="transparent"
+      <section 
         className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center px-4 sm:px-8 overflow-hidden bg-cover bg-center"
         style={{ backgroundImage: "url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1600&q=80')" }}
-        contentClassName="!text-left !p-0 w-full"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[rgba(0,0,0,0.8)] to-[rgba(0,0,0,0.4)] z-0"></div>
-        <div className="container mx-auto relative z-10 w-full h-full">
-          <div className="max-w-2xl space-y-6 sm:space-y-8 py-12">
-            <h2 className="text-4xl sm:text-6xl md:text-8xl font-headline font-extrabold leading-[1.0] sm:leading-[0.9] tracking-tighter text-on-background">
-              Power Your World <br/>
-              <span className="text-primary italic">With Clean Energy</span>
-            </h2>
-            <p className="text-base sm:text-lg text-on-surface-variant leading-relaxed max-w-xl">
-              Precision-engineered solar solutions designed for the Nigerian climate. Transition to reliable, independent power with our radiant monolith technology.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <NavLink to="/products" className="bg-primary-container text-on-primary-container px-6 py-3.5 sm:px-8 sm:py-4 rounded-md font-label font-bold text-base sm:text-lg hover:brightness-110 transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(245,166,35,0.4)]">
-                Shop Products
-                <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 0" }}>shopping_cart</span>
-              </NavLink>
-              <button 
-                onClick={() => openQuote('Book Installation')}
-                className="bg-transparent border border-outline-variant text-on-surface px-6 py-3.5 sm:px-8 sm:py-4 rounded-md font-label font-bold text-base sm:text-lg hover:bg-white/5 transition-all">
-                Book Installation
-              </button>
+        <DataGridHero
+          rows={20}
+          cols={30}
+          spacing={2}
+          duration={3}
+          color="#F5A623"
+          animationType="wave"
+          pulseEffect={true}
+          mouseGlow={true}
+          opacityMin={0.03}
+          opacityMax={0.18}
+          background="transparent"
+          className="absolute inset-0 w-full h-full"
+          style={{ minHeight: "100%", height: "100%" }}
+          contentClassName="relative w-full h-full flex items-center"
+        >
+          <div className="container mx-auto relative z-10 w-full h-full">
+            <div className="max-w-2xl space-y-6 sm:space-y-8 py-12">
+              <h2 className="text-4xl sm:text-6xl md:text-8xl font-headline font-extrabold leading-[1.0] sm:leading-[0.9] tracking-tighter text-on-background">
+                Power Your World <br/>
+                <span className="text-primary italic">With Clean Energy</span>
+              </h2>
+              <p className="text-base sm:text-lg text-on-surface-variant leading-relaxed max-w-xl">
+                Precision-engineered solar solutions designed for the Nigerian climate. Transition to reliable, independent power with our radiant monolith technology.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <NavLink to="/products" className="bg-primary-container text-on-primary-container px-6 py-3.5 sm:px-8 sm:py-4 rounded-md font-label font-bold text-base sm:text-lg hover:brightness-110 transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(245,166,35,0.4)]">
+                  Shop Products
+                  <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 0" }}>shopping_cart</span>
+                </NavLink>
+                <button 
+                  onClick={() => openQuote('Book Installation')}
+                  className="bg-transparent border border-outline-variant text-on-surface px-6 py-3.5 sm:px-8 sm:py-4 rounded-md font-label font-bold text-base sm:text-lg hover:bg-white/5 transition-all">
+                  Book Installation
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </DataGridHero>
+        </DataGridHero>
+      </section>
 
       {/* Brand Marquee */}
       <section

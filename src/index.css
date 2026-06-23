@@ -76,6 +76,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   z-index: 1;
+  background: transparent !important;
 }
 
 .grid-container {
@@ -110,7 +111,6 @@ a:hover {
 
 .hero-content {
   position: relative;
-  z-index: 2;
   text-align: center;
   width: 100%;
   padding: 2rem;
