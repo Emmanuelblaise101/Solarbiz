@@ -19,6 +19,7 @@ import Inverters from './pages/Inverters';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import AdminDashboard from './pages/AdminDashboard';
+import DemoOne from './pages/DemoOne';
 
 function App() {
   return (
@@ -36,6 +37,8 @@ function App() {
                 <AdminDashboard />
               </AdminRoute>
             } />
+
+            <Route path="/demo" element={<DemoOne />} />
 
             <Route path="/" element={<SharedLayout />}>
               <Route index element={<Home />} />

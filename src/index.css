@@ -49,3 +49,79 @@ a {
 a:hover {
   transform: translateY(-1px);
 }
+
+/* Data Grid Hero styling & variables */
+:root {
+  --background: 220, 20%, 10%;
+  --foreground: 0, 0%, 100%;
+  --foreground-muted: 0, 0%, 80%;
+  --green: 150, 100%, 50%;
+  --pink: 300, 100%, 70%;
+  --cyan: 180, 100%, 60%;
+  --yellow: 50, 100%, 60%;
+  --orange: 25, 100%, 60%;
+  --font-7xl: 4.5rem;
+  --font-lg: 1.125rem;
+  --font-bold: 800;
+  --shadow-md: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.data-grid-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.grid-container {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.grid-cell {
+  border-radius: 1px;
+  opacity: var(--opacity-min);
+  transition: opacity 0.3s ease;
+}
+
+/* Mouse-follow glow effect */
+.grid-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    300px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    rgba(255, 255, 255, 0.12),
+    transparent 80%
+  );
+  opacity: var(--mouse-glow-opacity, 0);
+  pointer-events: none;
+  mix-blend-mode: screen;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  width: 100%;
+  padding: 2rem;
+}
+
+@keyframes cell-pulse {
+  from {
+    opacity: var(--opacity-min);
+  }
+  to {
+    opacity: var(--opacity-max);
+  }
+}
+
