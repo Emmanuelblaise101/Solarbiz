@@ -4,74 +4,11 @@ import { useQuote } from '../context/QuoteContext';
 import { useCart } from '../context/CartContext';
 import { useProducts } from '../context/ProductContext';
 
-const BrandLogo = ({ name }) => {
-  switch (name) {
-    case 'Canadian Solar':
-      return (
-        <svg viewBox="0 0 160 35" className="h-6 sm:h-7 w-auto opacity-80 hover:opacity-100 transition-opacity" fill="currentColor">
-          <path d="M5 17 C5 9, 16 9, 16 17 C16 25, 5 25, 5 17 Z" fill="#E63B2E" />
-          <path d="M7 17 H 14 M 10.5 10 V 24 M 8 12.5 L 13 21.5 M 8 21.5 L 13 12.5" stroke="#fff" strokeWidth="1.2" />
-          <text x="24" y="21" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="11" fill="#fff" letterSpacing="0.08em">CanadianSolar</text>
-        </svg>
-      );
-    case 'Jinko Solar':
-      return (
-        <svg viewBox="0 0 130 35" className="h-6 sm:h-7 w-auto opacity-80 hover:opacity-100 transition-opacity" fill="currentColor">
-          <circle cx="12" cy="17" r="9" fill="#F59E0B" />
-          <path d="M6 17 H 18 M 12 8 V 26" stroke="#1a1a1a" strokeWidth="1.8" />
-          <text x="26" y="21" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="12" fill="#fff" letterSpacing="0.08em">JinkoSolar</text>
-        </svg>
-      );
-    case 'Trina Solar':
-      return (
-        <svg viewBox="0 0 130 35" className="h-6 sm:h-7 w-auto opacity-80 hover:opacity-100 transition-opacity" fill="currentColor">
-          <polygon points="12,7 20,23 4,23" fill="#2563EB" />
-          <text x="26" y="21" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="12" fill="#fff" letterSpacing="0.08em">TrinaSolar</text>
-        </svg>
-      );
-    case 'Felicity Solar':
-      return (
-        <svg viewBox="0 0 130 35" className="h-6 sm:h-7 w-auto opacity-80 hover:opacity-100 transition-opacity" fill="currentColor">
-          <path d="M4 17 A 8 8 0 0 1 20 17 A 8 8 0 0 1 4 17 Z" fill="#10B981" />
-          <path d="M12 9 V 25 M 8 17 H 16" stroke="#fff" strokeWidth="2" />
-          <text x="26" y="21" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="11" fill="#fff" letterSpacing="0.08em">FelicitySolar</text>
-        </svg>
-      );
-    case 'SMK Solar':
-      return (
-        <svg viewBox="0 0 110 35" className="h-6 sm:h-7 w-auto opacity-80 hover:opacity-100 transition-opacity" fill="currentColor">
-          <rect x="3" y="8" width="18" height="18" rx="3" fill="#D97706" />
-          <path d="M8 13 C 8 11, 16 11, 16 17 C 16 23, 8 23, 8 21" fill="none" stroke="#fff" strokeWidth="2" />
-          <text x="26" y="22" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="12" fill="#fff" letterSpacing="0.08em">SMKSolar</text>
-        </svg>
-      );
-    case 'Prag Solar':
-      return (
-        <svg viewBox="0 0 110 35" className="h-6 sm:h-7 w-auto opacity-80 hover:opacity-100 transition-opacity" fill="currentColor">
-          <polygon points="12,7 20,17 12,27 4,17" fill="#8B5CF6" />
-          <text x="26" y="22" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="12" fill="#fff" letterSpacing="0.08em">PragSolar</text>
-        </svg>
-      );
-    case 'AE Dunamis':
-      return (
-        <svg viewBox="0 0 140 35" className="h-6 sm:h-7 w-auto opacity-80 hover:opacity-100 transition-opacity" fill="currentColor">
-          <path d="M4 10 L 12 6 L 20 10 V 17 C 20 22, 12 26, 12 26 C 12 26, 4 22, 4 17 Z" fill="#3B82F6" />
-          <path d="M12 10 L 9 16 H 12 V 22 L 15 15 H 12 Z" fill="#fff" />
-          <text x="26" y="21" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="11" fill="#fff" letterSpacing="0.05em">AE DUNAMIS</text>
-        </svg>
-      );
-    case 'Bluesun Solar':
-      return (
-        <svg viewBox="0 0 130 35" className="h-6 sm:h-7 w-auto opacity-80 hover:opacity-100 transition-opacity" fill="currentColor">
-          <circle cx="12" cy="17" r="9" fill="#0284C7" />
-          <circle cx="12" cy="17" r="5" fill="#fff" />
-          <text x="26" y="21" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="11" fill="#fff" letterSpacing="0.08em">BluesunSolar</text>
-        </svg>
-      );
-    default:
-      return <span className="text-white font-bold">{name}</span>;
-  }
-};
+import brand1 from '../assets/brands/brand-1.png';
+import brand2 from '../assets/brands/brand-2.png';
+import brand3 from '../assets/brands/brand-3.png';
+import brand4 from '../assets/brands/brand-4.png';
+import brand5 from '../assets/brands/brand-5.png';
 
 const Home = () => {
   const { openQuote } = useQuote();
@@ -159,22 +96,17 @@ const Home = () => {
         {/* Scrolling track */}
         <div className="marquee-wrapper" style={{ overflow: 'hidden', width: '100%' }}>
           <div className="marquee-track">
-            {[0, 1].map((setIndex) => (
+            {[0, 1, 2, 3].map((setIndex) => (
               <div key={setIndex} style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
-                {[
-                  'Felicity Solar',
-                  'SMK Solar',
-                  'Canadian Solar',
-                  'Jinko Solar',
-                  'Prag Solar',
-                  'Trina Solar',
-                  'AE Dunamis',
-                  'Bluesun Solar'
-                ].map((brandName, i) => (
+                {[brand1, brand2, brand3, brand4, brand5].map((brand, i) => (
                   <div key={`${setIndex}-${i}`} style={{ display: 'flex', alignItems: 'center' }}>
                     {/* Brand entry */}
                     <div style={{ display: 'flex', alignItems: 'center', padding: '0 24px sm:0 36px', whiteSpace: 'nowrap' }}>
-                      <BrandLogo name={brandName} />
+                      <img 
+                        src={brand} 
+                        alt={`Brand Logo ${i + 1}`} 
+                        className="h-8 sm:h-10 w-auto opacity-75 hover:opacity-100 transition-opacity brightness-0 invert" 
+                      />
                     </div>
                     {/* Amber divider */}
                     <div style={{ width: '1px', height: '24px', backgroundColor: '#f59e0b', opacity: 0.3, flexShrink: 0 }} />
