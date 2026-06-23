@@ -58,9 +58,9 @@ const Home = () => {
       {/* Brand Marquee */}
       <section
         style={{
-          backgroundColor: '#1a1a1a',
-          borderTop: '1px solid #2a2a2a',
-          borderBottom: '1px solid #2a2a2a',
+          backgroundColor: '#f7f7f7',
+          borderTop: '1px solid #e5e5e7',
+          borderBottom: '1px solid #e5e5e7',
           overflow: 'hidden',
           padding: '16px 0',
         }}
@@ -86,7 +86,7 @@ const Home = () => {
             fontSize: '9px',
             letterSpacing: '0.3em',
             textTransform: 'uppercase',
-            color: '#f59e0b',
+            color: '#1a1a1a9c',
             fontWeight: 700,
           }}>
             Trusted Brands
@@ -105,11 +105,11 @@ const Home = () => {
                       <img 
                         src={brand} 
                         alt={`Brand Logo ${i + 1}`} 
-                        className="h-8 sm:h-10 w-auto opacity-75 hover:opacity-100 transition-opacity brightness-0 invert" 
+                        className="h-8 sm:h-10 w-auto opacity-90 hover:opacity-100 transition-opacity" 
                       />
                     </div>
-                    {/* Amber divider */}
-                    <div style={{ width: '1px', height: '24px', backgroundColor: '#f59e0b', opacity: 0.3, flexShrink: 0 }} />
+                    {/* Light divider */}
+                    <div style={{ width: '1px', height: '24px', backgroundColor: '#e5e5e7', flexShrink: 0 }} />
                   </div>
                 ))}
               </div>
