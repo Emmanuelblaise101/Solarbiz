@@ -58,11 +58,11 @@ const Home = () => {
       {/* Brand Marquee */}
       <section
         style={{
-          backgroundColor: '#f7f7f7',
-          borderTop: '1px solid #e5e5e7',
-          borderBottom: '1px solid #e5e5e7',
+          background: 'linear-gradient(to bottom, #16221c, #131313)',
+          borderTop: '1px solid #1c2b23',
+          borderBottom: '1px solid #131313',
           overflow: 'hidden',
-          padding: '16px 0',
+          padding: '24px 0',
         }}
       >
         <style>{`
@@ -81,13 +81,14 @@ const Home = () => {
         `}</style>
 
         {/* Label */}
-        <div style={{ paddingLeft: '1rem', smPaddingLeft: '2rem', marginBottom: '10px' }} className="px-4 sm:px-8">
+        <div style={{ paddingLeft: '1rem', smPaddingLeft: '2rem', marginBottom: '16px' }} className="px-4 sm:px-8">
           <span style={{
             fontSize: '9px',
             letterSpacing: '0.3em',
             textTransform: 'uppercase',
-            color: '#1a1a1a9c',
+            color: '#a7f3d0',
             fontWeight: 700,
+            opacity: 0.8
           }}>
             Trusted Brands
           </span>
@@ -99,17 +100,15 @@ const Home = () => {
             {[0, 1, 2, 3].map((setIndex) => (
               <div key={setIndex} style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
                 {[brand1, brand2, brand3, brand4, brand5].map((brand, i) => (
-                  <div key={`${setIndex}-${i}`} style={{ display: 'flex', alignItems: 'center' }}>
-                    {/* Brand entry */}
-                    <div style={{ display: 'flex', alignItems: 'center', padding: '0 24px sm:0 36px', whiteSpace: 'nowrap' }}>
+                  <div key={`${setIndex}-${i}`} style={{ display: 'flex', alignItems: 'center', padding: '0 12px sm:0 18px' }}>
+                    {/* Glassmorphic Brand Card */}
+                    <div className="bg-white/5 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/5 hover:bg-white/10 transition-all flex items-center justify-center h-16 sm:h-20 w-36 sm:w-44 shadow-lg shadow-black/20">
                       <img 
                         src={brand} 
                         alt={`Brand Logo ${i + 1}`} 
-                        className="h-8 sm:h-10 w-auto opacity-90 hover:opacity-100 transition-opacity" 
+                        className="max-h-full max-w-full object-contain" 
                       />
                     </div>
-                    {/* Light divider */}
-                    <div style={{ width: '1px', height: '24px', backgroundColor: '#e5e5e7', flexShrink: 0 }} />
                   </div>
                 ))}
               </div>
