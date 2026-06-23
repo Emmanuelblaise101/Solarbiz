@@ -83,7 +83,7 @@ a:hover {
   inset: 0;
   display: grid;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
 }
 
 .grid-cell {
@@ -99,7 +99,7 @@ a:hover {
   inset: 0;
   background: radial-gradient(
     300px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
-    rgba(255, 255, 255, 0.12),
+    rgba(245, 166, 35, 0.15),
     transparent 80%
   );
   opacity: var(--mouse-glow-opacity, 0);
@@ -110,7 +110,7 @@ a:hover {
 
 .hero-content {
   position: relative;
-  z-index: 10;
+  z-index: 2;
   text-align: center;
   width: 100%;
   padding: 2rem;
@@ -122,6 +122,12 @@ a:hover {
   }
   to {
     opacity: var(--opacity-max);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid-cell {
+    animation: none !important;
   }
 }
 

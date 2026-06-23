@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { useQuote } from '../context/QuoteContext';
 import { useCart } from '../context/CartContext';
 import { useProducts } from '../context/ProductContext';
+import DataGridHero from '../components/ui/data-grid-hero';
 
 import brand1 from '../assets/brands/brand-1.png';
 import brand2 from '../assets/brands/brand-2.png';
@@ -26,9 +27,21 @@ const Home = () => {
   return (
     <>
       {/* Hero Section */}
-      <section 
+      <DataGridHero
+        rows={20}
+        cols={30}
+        spacing={2}
+        duration={3}
+        color="#F5A623"
+        animationType="wave"
+        pulseEffect={true}
+        mouseGlow={true}
+        opacityMin={0.03}
+        opacityMax={0.18}
+        background="transparent"
         className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center px-4 sm:px-8 overflow-hidden bg-cover bg-center"
         style={{ backgroundImage: "url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1600&q=80')" }}
+        contentClassName="!text-left !p-0 w-full"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[rgba(0,0,0,0.8)] to-[rgba(0,0,0,0.4)] z-0"></div>
         <div className="container mx-auto relative z-10 w-full h-full">
@@ -53,7 +66,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </DataGridHero>
 
       {/* Brand Marquee */}
       <section

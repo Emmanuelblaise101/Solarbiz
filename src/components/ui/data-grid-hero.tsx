@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, ReactNode } from "react";
+import React, { useEffect, useRef, ReactNode, HTMLAttributes } from "react";
 
-interface DataGridHeroProps {
+interface DataGridHeroProps extends HTMLAttributes<HTMLDivElement> {
   rows: number;
   cols: number;
   spacing: number;
@@ -13,6 +13,7 @@ interface DataGridHeroProps {
   opacityMax: number;
   background: string;
   children?: ReactNode;
+  contentClassName?: string;
 }
 
 export default function DataGridHero({
@@ -28,6 +29,10 @@ export default function DataGridHero({
   opacityMax,
   background,
   children,
+  className = "",
+  style = {},
+  contentClassName = "",
+  ...rest
 }: DataGridHeroProps) {
   const gridRef = useRef<HTMLDivElement>(null);
 
@@ -100,16 +105,29 @@ export default function DataGridHero({
   }, [mouseGlow]);
 
   return (
-    <div className="data-grid-hero" style={{ background }}>
+    <div
+      className={`data-grid-hero ${className}`}
+      style={{
+        ...style,
+        ...(background && background !== "transparent" ? { background } : {}),
+      }}
+      {...rest}
+    >
+      <div
+        className="absolute inset-0 bg-black/35 pointer-events-none"
+        style={{ zIndex: 0 }}
+      />
       <div
         ref={gridRef}
         className="grid-container"
         aria-hidden="true"
+        style={{ zIndex: 1 }}
       />
       <div
-        className="hero-content"
+        className={`hero-content ${contentClassName}`}
         role="region"
         aria-label="Hero Content"
+        style={{ zIndex: 2 }}
       >
         {children}
       </div>

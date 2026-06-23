@@ -30,6 +30,9 @@ export default function DataGridHero({
   opacityMax,
   background,
   children,
+  className = "",
+  style = {},
+  contentClassName = "",
 }) {
   const gridRef = useRef(null);
 
@@ -104,16 +107,28 @@ export default function DataGridHero({
   }, [mouseGlow]);
 
   return (
-    <div className="data-grid-hero" style={{ background }}>
+    <div
+      className={`data-grid-hero ${className}`}
+      style={{
+        ...style,
+        ...(background && background !== "transparent" ? { background } : {}),
+      }}
+    >
+      <div
+        className="absolute inset-0 bg-black/35 pointer-events-none"
+        style={{ zIndex: 0 }}
+      />
       <div
         ref={gridRef}
         className="grid-container"
         aria-hidden="true"
+        style={{ zIndex: 1 }}
       />
       <div
-        className="hero-content"
+        className={`hero-content ${contentClassName}`}
         role="region"
         aria-label="Hero Content"
+        style={{ zIndex: 2 }}
       >
         {children}
       </div>
@@ -135,4 +150,7 @@ DataGridHero.propTypes = {
   opacityMax: PropTypes.number.isRequired,
   background: PropTypes.string.isRequired,
   children: PropTypes.node,
+  className: PropTypes.string,
+  style: PropTypes.object,
+  contentClassName: PropTypes.string,
 };
