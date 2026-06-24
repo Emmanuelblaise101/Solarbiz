@@ -36,49 +36,71 @@ export default function DataGridHero({
 }) {
   const gridRef = useRef(null);
 
-  // Build grid cells on cfg change
+  // Build grid cells on cfg change and resize
   useEffect(() => {
     const container = gridRef.current;
     if (!container) return;
 
-    container.innerHTML = "";
-    container.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
-    container.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
-    container.style.gap = `${spacing}px`;
-    container.style.setProperty("--mouse-glow-opacity", mouseGlow ? 1 : 0);
+    const renderGrid = () => {
+      const width = container.clientWidth;
+      const height = container.clientHeight;
 
-    const total = rows * cols;
-    const centerRow = Math.floor(rows / 2);
-    const centerCol = Math.floor(cols / 2);
+      // Target size for a cell is around 40px
+      const targetSize = 40;
+      const computedCols = cols && cols > 0 ? cols : Math.max(10, Math.floor(width / targetSize));
+      const computedRows = rows && rows > 0 ? rows : Math.max(10, Math.floor(height / targetSize));
 
-    for (let i = 0; i < total; i++) {
-      const cell = document.createElement("div");
-      cell.className = "grid-cell";
-      cell.style.backgroundColor = color;
-      cell.style.setProperty("--opacity-min", opacityMin);
-      cell.style.setProperty("--opacity-max", opacityMax);
+      container.innerHTML = "";
+      container.style.gridTemplateColumns = `repeat(${computedCols}, 1fr)`;
+      container.style.gridTemplateRows = `repeat(${computedRows}, 1fr)`;
+      container.style.gap = `${spacing}px`;
+      container.style.setProperty("--mouse-glow-opacity", mouseGlow ? "1" : "0");
 
-      if (pulseEffect) {
-        let delay;
-        const r = Math.floor(i / cols);
-        const c = i % cols;
+      const total = computedRows * computedCols;
+      const centerRow = Math.floor(computedRows / 2);
+      const centerCol = Math.floor(computedCols / 2);
 
-        if (animationType === "wave") {
-          delay = (r + c) * 0.1;
-        } else if (animationType === "random") {
-          delay = Math.random() * duration;
-        } else {
-          const dr = Math.abs(r - centerRow);
-          const dc = Math.abs(c - centerCol);
-          delay = Math.sqrt(dr * dr + dc * dc) * 0.2;
+      for (let i = 0; i < total; i++) {
+        const cell = document.createElement("div");
+        cell.className = "grid-cell";
+        cell.style.backgroundColor = color;
+        cell.style.setProperty("--opacity-min", opacityMin);
+        cell.style.setProperty("--opacity-max", opacityMax);
+
+        if (pulseEffect) {
+          let delay;
+          const r = Math.floor(i / computedCols);
+          const c = i % computedCols;
+
+          if (animationType === "wave") {
+            delay = (r + c) * 0.05; // Slightly faster wave scaling for responsive grid sizes
+          } else if (animationType === "random") {
+            delay = Math.random() * duration;
+          } else {
+            const dr = Math.abs(r - centerRow);
+            const dc = Math.abs(c - centerCol);
+            delay = Math.sqrt(dr * dr + dc * dc) * 0.15;
+          }
+
+          cell.style.animation = `cell-pulse ${duration}s infinite alternate`;
+          cell.style.animationDelay = `${delay.toFixed(3)}s`;
         }
 
-        cell.style.animation = `cell-pulse ${duration}s infinite alternate`;
-        cell.style.animationDelay = `${delay.toFixed(3)}s`;
+        container.appendChild(cell);
       }
+    };
 
-      container.appendChild(cell);
-    }
+    renderGrid();
+
+    // Responsive observer to recalculate when the container dimensions change
+    const resizeObserver = new ResizeObserver(() => {
+      renderGrid();
+    });
+    resizeObserver.observe(container);
+
+    return () => {
+      resizeObserver.disconnect();
+    };
   }, [
     rows,
     cols,
@@ -133,8 +155,8 @@ export default function DataGridHero({
 }
 
 DataGridHero.propTypes = {
-  rows: PropTypes.number.isRequired,
-  cols: PropTypes.number.isRequired,
+  rows: PropTypes.number,
+  cols: PropTypes.number,
   spacing: PropTypes.number.isRequired,
   duration: PropTypes.number.isRequired,
   color: PropTypes.string.isRequired,

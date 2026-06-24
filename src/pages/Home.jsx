@@ -28,45 +28,73 @@ const Home = () => {
     <>
       {/* Hero Section */}
       <section 
-        className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center px-4 sm:px-8 overflow-hidden bg-cover bg-center"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1600&q=80')" }}
+        className="relative -mt-20 h-screen flex overflow-hidden bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1920&q=85')" }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-[rgba(0,0,0,0.8)] to-[rgba(0,0,0,0.4)] z-0"></div>
+        {/* Dark overlay gradient — stronger on left for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30 z-[1]"></div>
+        {/* Subtle radial glow on top-left */}
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary/10 blur-[120px] rounded-full -translate-x-1/3 -translate-y-1/3 z-[1] pointer-events-none"></div>
+
         <DataGridHero
-          rows={20}
-          cols={30}
           spacing={2}
           duration={3}
           color="#F5A623"
           animationType="wave"
           pulseEffect={true}
           mouseGlow={true}
-          opacityMin={0.03}
-          opacityMax={0.18}
+          opacityMin={0.04}
+          opacityMax={0.22}
           background="transparent"
           className="absolute inset-0 w-full h-full"
-          style={{ minHeight: "100%", height: "100%" }}
-          contentClassName="relative w-full h-full flex items-center"
+          style={{ height: "100%" }}
+          contentClassName="px-6 sm:px-12 md:px-20 lg:px-28 xl:px-32 justify-start"
         >
-          <div className="container mx-auto relative z-10 w-full h-full">
-            <div className="max-w-2xl space-y-6 sm:space-y-8 py-12">
-              <h2 className="text-4xl sm:text-6xl md:text-8xl font-headline font-extrabold leading-[1.0] sm:leading-[0.9] tracking-tighter text-on-background">
-                Power Your World <br/>
-                <span className="text-primary italic">With Clean Energy</span>
-              </h2>
-              <p className="text-base sm:text-lg text-on-surface-variant leading-relaxed max-w-xl">
-                Precision-engineered solar solutions designed for the Nigerian climate. Transition to reliable, independent power with our radiant monolith technology.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <NavLink to="/products" className="bg-primary-container text-on-primary-container px-6 py-3.5 sm:px-8 sm:py-4 rounded-md font-label font-bold text-base sm:text-lg hover:brightness-110 transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(245,166,35,0.4)]">
-                  Shop Products
-                  <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 0" }}>shopping_cart</span>
-                </NavLink>
-                <button 
-                  onClick={() => openQuote('Book Installation')}
-                  className="bg-transparent border border-outline-variant text-on-surface px-6 py-3.5 sm:px-8 sm:py-4 rounded-md font-label font-bold text-base sm:text-lg hover:bg-white/5 transition-all">
-                  Book Installation
-                </button>
+          {/* Content block — left-aligned, vertically centred, padded for navbar */}
+          <div className="max-w-3xl w-full pt-20 space-y-6 sm:space-y-8 text-left">
+            {/* Eyebrow label */}
+            <p className="text-xs sm:text-sm font-label font-bold uppercase tracking-[0.3em] text-primary/80">
+              Nigeria's Leading Solar Distributor
+            </p>
+
+            <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-headline font-extrabold leading-[1.0] tracking-tighter text-white">
+              Power Your World<br/>
+              <span className="text-primary italic">With Clean Energy</span>
+            </h1>
+
+            <p className="text-sm sm:text-base md:text-lg text-white/70 leading-relaxed max-w-lg">
+              Precision-engineered solar solutions designed for the Nigerian climate. Transition to reliable, independent power with our radiant monolith technology.
+            </p>
+
+            <div className="flex flex-col xs:flex-row gap-3 sm:gap-4 pt-2">
+              <NavLink
+                to="/products"
+                className="bg-primary-container text-on-primary-container px-7 py-4 sm:px-9 sm:py-4 rounded-md font-label font-bold text-sm sm:text-base uppercase tracking-wider hover:brightness-110 transition-all flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(245,166,35,0.35)] w-full xs:w-auto"
+              >
+                Shop Products
+                <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 0" }}>shopping_cart</span>
+              </NavLink>
+              <button
+                onClick={() => openQuote('Book Installation')}
+                className="bg-white/5 border border-white/20 backdrop-blur-sm text-white px-7 py-4 sm:px-9 sm:py-4 rounded-md font-label font-bold text-sm sm:text-base uppercase tracking-wider hover:bg-white/10 hover:border-white/40 transition-all w-full xs:w-auto"
+              >
+                Book Installation
+              </button>
+            </div>
+
+            {/* Stat strip */}
+            <div className="flex flex-wrap gap-6 sm:gap-10 pt-4 border-t border-white/10">
+              <div>
+                <p className="text-xl sm:text-2xl font-headline font-black text-primary">500+</p>
+                <p className="text-[11px] sm:text-xs text-white/50 uppercase tracking-widest font-label">Installations</p>
+              </div>
+              <div>
+                <p className="text-xl sm:text-2xl font-headline font-black text-primary">10yr</p>
+                <p className="text-[11px] sm:text-xs text-white/50 uppercase tracking-widest font-label">Warranty</p>
+              </div>
+              <div>
+                <p className="text-xl sm:text-2xl font-headline font-black text-primary">24/7</p>
+                <p className="text-[11px] sm:text-xs text-white/50 uppercase tracking-widest font-label">Support</p>
               </div>
             </div>
           </div>

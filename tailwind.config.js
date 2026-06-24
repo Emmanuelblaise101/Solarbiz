@@ -62,6 +62,9 @@ export default {
         "label": ["Space Grotesk", "monospace"]
       },
       borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+      screens: {
+        "xs": "480px",
+      },
     },
   },
   plugins: [],
