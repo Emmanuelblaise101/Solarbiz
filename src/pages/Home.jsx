@@ -3,7 +3,6 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { useQuote } from '../context/QuoteContext';
 import { useCart } from '../context/CartContext';
 import { useProducts } from '../context/ProductContext';
-import DataGridHero from '../components/ui/data-grid-hero';
 
 import brand1 from '../assets/brands/brand-1.png';
 import brand2 from '../assets/brands/brand-2.png';
@@ -36,20 +35,7 @@ const Home = () => {
         {/* Warm sunlight radial glow on top-left */}
         <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full -translate-x-1/3 -translate-y-1/3 z-[1] pointer-events-none"></div>
 
-        <DataGridHero
-          spacing={2}
-          duration={3}
-          color="#FF9100"
-          animationType="wave"
-          pulseEffect={true}
-          mouseGlow={true}
-          opacityMin={0.02}
-          opacityMax={0.15}
-          background="transparent"
-          className="absolute inset-0 w-full h-full"
-          style={{ height: "100%" }}
-          contentClassName="px-6 sm:px-12 md:px-20 lg:px-28 xl:px-32 justify-start"
-        >
+        <div className="relative z-10 w-full h-full flex items-center justify-start px-6 sm:px-12 md:px-20 lg:px-28 xl:px-32">
           {/* Content block — left-aligned, vertically centred, padded for navbar */}
           <div className="max-w-3xl w-full pt-20 space-y-6 sm:space-y-8 text-left">
             {/* Eyebrow label */}
@@ -98,15 +84,13 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </DataGridHero>
+        </div>
       </section>
 
       {/* Brand Marquee */}
       <section
+        className="bg-slate-100 border-y border-slate-200/80"
         style={{
-          background: 'linear-gradient(to bottom, #16221c, #131313)',
-          borderTop: '1px solid #1c2b23',
-          borderBottom: '1px solid #131313',
           overflow: 'hidden',
           padding: '24px 0',
         }}
@@ -132,9 +116,8 @@ const Home = () => {
             fontSize: '9px',
             letterSpacing: '0.3em',
             textTransform: 'uppercase',
-            color: '#a7f3d0',
+            color: '#FF9100',
             fontWeight: 700,
-            opacity: 0.8
           }}>
             Trusted Brands
           </span>
@@ -148,7 +131,7 @@ const Home = () => {
                 {[brand1, brand2, brand3, brand4, brand5].map((brand, i) => (
                   <div key={`${setIndex}-${i}`} style={{ display: 'flex', alignItems: 'center', padding: '0 12px sm:0 18px' }}>
                     {/* Glassmorphic Brand Card */}
-                    <div className="bg-white/5 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/5 hover:bg-white/10 transition-all flex items-center justify-center h-16 sm:h-20 w-36 sm:w-44 shadow-lg shadow-black/20">
+                    <div className="bg-white px-6 py-3 rounded-2xl border border-slate-200/60 hover:bg-slate-50 transition-all flex items-center justify-center h-16 sm:h-20 w-36 sm:w-44 shadow-sm shadow-slate-100/50">
                       <img 
                         src={brand} 
                         alt={`Brand Logo ${i + 1}`} 
