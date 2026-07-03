@@ -23,7 +23,7 @@ const Batteries = () => {
             </p>
           </div>
           <div className="diagonal-cut w-full aspect-video bg-surface-container-low shadow-2xl overflow-hidden group">
-             <img src="https://solarmall.ng/wp-content/uploads/2023/11/battery-group.png" alt="Battery group" className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700" />
+             <img src="https://solarmall.ng/wp-content/uploads/2023/11/battery-group.png" alt="Battery group" className="w-full h-full object-cover transition-all duration-700" />
           </div>
         </div>
       </section>
@@ -62,7 +62,7 @@ const Batteries = () => {
                   </div>
                   <div>
                     <div className="rounded-xl w-full h-[180px] overflow-hidden mb-6 diagonal-cut p-4 bg-white/5">
-                      <img src={battery.image} alt={battery.name} className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-700" />
+                      <img src={battery.image} alt={battery.name} className="w-full h-full object-contain transition-all duration-700" />
                     </div>
                     <div className="text-3xl font-headline font-black text-primary mb-6">
                       ₦ {new Intl.NumberFormat().format(battery.price)}

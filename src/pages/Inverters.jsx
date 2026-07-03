@@ -20,7 +20,7 @@ const Inverters = () => {
             </p>
           </div>
           <div className="diagonal-cut w-full md:w-4/5 aspect-square md:aspect-video bg-surface-container-low overflow-hidden group mx-auto rounded-2xl">
-             <img src="https://solarmall.ng/wp-content/uploads/2024/03/Felicity-Solar-5KVA-48V-3KVA-24V-Hybrid-Inverter.jpg" alt="Full inverter unit" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+             <img src="https://solarmall.ng/wp-content/uploads/2024/03/Felicity-Solar-5KVA-48V-3KVA-24V-Hybrid-Inverter.jpg" alt="Full inverter unit" className="w-full h-full object-cover transition-all duration-700" />
           </div>
         </div>
       </section>
@@ -88,11 +88,11 @@ const Inverters = () => {
                   <div className={index === 3 ? 'flex-1 rounded-xl w-full h-[250px] bg-white/5 overflow-hidden diagonal-cut flex items-center justify-center p-4' : ''}>
                     {index !== 3 && (
                       <div className="rounded-xl w-full h-[180px] overflow-hidden mb-6 diagonal-cut bg-white/5">
-                        <img src={inverter.image} alt={inverter.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+                        <img src={inverter.image} alt={inverter.name} className="w-full h-full object-cover transition-all duration-700" />
                       </div>
                     )}
                     {index === 3 && (
-                      <img src={inverter.image} alt={inverter.name} className="h-full w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-700" />
+                      <img src={inverter.image} alt={inverter.name} className="h-full w-auto object-contain transition-all duration-700" />
                     )}
                     {index !== 3 && (
                       <>

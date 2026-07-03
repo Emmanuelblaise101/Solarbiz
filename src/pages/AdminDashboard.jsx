@@ -263,7 +263,7 @@ const AdminDashboard = () => {
                       <tr key={product.id} className="border-b border-outline-variant/10 hover:bg-surface-container-high transition-colors group">
                         <td className="py-4 px-4">
                           <div className="w-16 h-16 rounded bg-surface-container-low overflow-hidden p-1 border border-outline-variant/10">
-                            <img src={product.image} alt={product.name} className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all" />
+                            <img src={product.image} alt={product.name} className="w-full h-full object-contain transition-all" />
                           </div>
                         </td>
                         <td className="py-4 px-4">

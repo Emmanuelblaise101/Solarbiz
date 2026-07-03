@@ -23,7 +23,7 @@ const Stabilizers = () => {
             </p>
           </div>
           <div className="diagonal-cut w-full aspect-video bg-surface-container-low shadow-2xl overflow-hidden group">
-             <img src="https://solarmall.ng/wp-content/uploads/2023/11/Rilsopower-Stabilizer-200x200.png" alt="Voltage Stabilizer Hero" className="w-full h-full object-contain grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700" />
+              <img src="https://solarmall.ng/wp-content/uploads/2023/11/Rilsopower-Stabilizer-200x200.png" alt="Voltage Stabilizer Hero" className="w-full h-full object-contain transition-all duration-700" />
           </div>
         </div>
       </section>
@@ -89,11 +89,11 @@ const Stabilizers = () => {
                   <div className={index === 4 ? 'flex-1 rounded-xl w-full h-[250px] overflow-hidden diagonal-cut flex items-center justify-center p-4 bg-white/5' : ''}>
                     {index !== 4 && (
                       <div className="rounded-xl w-full h-[180px] overflow-hidden mb-6 diagonal-cut p-4 bg-white/5">
-                        <img src={stabilizer.image} alt={stabilizer.name} className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-700" />
+                        <img src={stabilizer.image} alt={stabilizer.name} className="w-full h-full object-contain transition-all duration-700" />
                       </div>
                     )}
                     {index === 4 && (
-                      <img src={stabilizer.image} alt={stabilizer.name} className="h-full w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-700" />
+                      <img src={stabilizer.image} alt={stabilizer.name} className="h-full w-auto object-contain transition-all duration-700" />
                     )}
                     {index !== 4 && (
                       <>

@@ -20,7 +20,7 @@ const Panels = () => {
             </p>
           </div>
           <div className="diagonal-cut w-full aspect-video bg-surface-container-low shadow-2xl overflow-hidden group">
-             <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop" alt="High grade shiny solar panels installed" className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700" />
+             <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop" alt="High grade shiny solar panels installed" className="w-full h-full object-cover transition-all duration-700" />
           </div>
         </div>
       </section>
@@ -81,11 +81,11 @@ const Panels = () => {
                   <div className={index === 4 ? 'flex-1 rounded-xl w-full h-[250px] overflow-hidden diagonal-cut p-4 mt-6 md:mt-0' : ''}>
                     {index !== 4 && (
                       <div className="rounded-xl w-full h-[180px] overflow-hidden mb-6 diagonal-cut p-4">
-                        <img src={panel.image} alt={panel.name} className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-700" />
+                        <img src={panel.image} alt={panel.name} className="w-full h-full object-contain transition-all duration-700" />
                       </div>
                     )}
                     {index === 4 && (
-                      <img src={panel.image} alt={panel.name} className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-700" />
+                      <img src={panel.image} alt={panel.name} className="w-full h-full object-contain transition-all duration-700" />
                     )}
                     {index !== 4 && (
                       <>
