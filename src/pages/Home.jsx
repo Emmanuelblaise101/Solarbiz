@@ -30,10 +30,8 @@ const Home = () => {
         className="relative -mt-20 h-screen flex overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1920&q=85')" }}
       >
-        {/* Daylight overlay gradient — fade from solid white to translucent on right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/30 z-[1]"></div>
-        {/* Warm sunlight radial glow on top-left */}
-        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full -translate-x-1/3 -translate-y-1/3 z-[1] pointer-events-none"></div>
+        {/* Very subtle left-edge fade only — keeps the image vivid */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/10 to-transparent z-[1]"></div>
 
         <div className="relative z-10 w-full h-full flex items-center justify-start px-6 sm:px-12 md:px-20 lg:px-28 xl:px-32">
           {/* Content block — left-aligned, vertically centred, padded for navbar */}
@@ -43,12 +41,12 @@ const Home = () => {
               Nigeria's Leading Solar Distributor
             </p>
 
-            <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-headline font-extrabold leading-[1.0] tracking-tighter text-slate-900">
+            <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-headline font-extrabold leading-[1.0] tracking-tighter text-white">
               Power Your World<br/>
-              <span className="text-primary italic">With Clean Energy</span>
+              <span className="text-amber-400 italic">With Clean Energy</span>
             </h1>
 
-            <p className="text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed max-w-lg">
+            <p className="text-sm sm:text-base md:text-lg text-white/80 leading-relaxed max-w-lg">
               Precision-engineered solar solutions designed for the Nigerian climate. Transition to reliable, independent power with our radiant monolith technology.
             </p>
 
@@ -62,25 +60,25 @@ const Home = () => {
               </NavLink>
               <button
                 onClick={() => openQuote('Book Installation')}
-                className="bg-white/80 border border-slate-200/80 backdrop-blur-sm text-slate-800 px-7 py-4 sm:px-9 sm:py-4 rounded-md font-label font-bold text-sm sm:text-base uppercase tracking-wider hover:bg-slate-5 hover:border-slate-300 transition-all w-full xs:w-auto"
+                className="bg-white/10 border border-white/30 backdrop-blur-sm text-white px-7 py-4 sm:px-9 sm:py-4 rounded-md font-label font-bold text-sm sm:text-base uppercase tracking-wider hover:bg-white/20 hover:border-white/50 transition-all w-full xs:w-auto"
               >
                 Book Installation
               </button>
             </div>
 
             {/* Stat strip */}
-            <div className="flex flex-wrap gap-6 sm:gap-10 pt-4 border-t border-slate-200">
+            <div className="flex flex-wrap gap-6 sm:gap-10 pt-4 border-t border-white/20">
               <div>
-                <p className="text-xl sm:text-2xl font-headline font-black text-primary">500+</p>
-                <p className="text-[11px] sm:text-xs text-slate-500 uppercase tracking-widest font-label">Installations</p>
+                <p className="text-xl sm:text-2xl font-headline font-black text-amber-400">500+</p>
+                <p className="text-[11px] sm:text-xs text-white/60 uppercase tracking-widest font-label">Installations</p>
               </div>
               <div>
-                <p className="text-xl sm:text-2xl font-headline font-black text-primary">10yr</p>
-                <p className="text-[11px] sm:text-xs text-slate-500 uppercase tracking-widest font-label">Warranty</p>
+                <p className="text-xl sm:text-2xl font-headline font-black text-amber-400">10yr</p>
+                <p className="text-[11px] sm:text-xs text-white/60 uppercase tracking-widest font-label">Warranty</p>
               </div>
               <div>
-                <p className="text-xl sm:text-2xl font-headline font-black text-primary">24/7</p>
-                <p className="text-[11px] sm:text-xs text-slate-500 uppercase tracking-widest font-label">Support</p>
+                <p className="text-xl sm:text-2xl font-headline font-black text-amber-400">24/7</p>
+                <p className="text-[11px] sm:text-xs text-white/60 uppercase tracking-widest font-label">Support</p>
               </div>
             </div>
           </div>
