@@ -8,8 +8,8 @@
     overflow-x: hidden;
   }
   body {
-    background-color: #131313;
-    color: #e5e2e1;
+    background-color: #f8fafc;
+    color: #0f172a;
     font-family: "Plus Jakarta Sans", sans-serif;
     margin: 0;
     padding: 0;
@@ -23,7 +23,7 @@
 
 .grain-overlay {
   background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCfpttB_nyaFGLFs9WRNt4EeMm8nHRHoQlu0KkB0CpX3luJL0zIbCX2nbJkQTOtR97ZXaTb7iSSlsfg3ijf4hn0sVDZNQPJooeL-Sxui7mkZPAJLPgU7DgUee9M5dnmh6b1U7KpKv4X35N9mItLCMm02GHGzzhfUIIPDFu4bpfLDtFSFcbBgy5KmtCXFBERmeVZUWaf0xNou7yAakW7Cf6z0Qq08YlwKqIVensor3jnCGL0xsOXwBHREyxfcYhvIX5AtEapZg7lH2g");
-  opacity: 0.03;
+  opacity: 0.015;
   pointer-events: none;
 }
 

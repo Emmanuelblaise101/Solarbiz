@@ -31,20 +31,20 @@ const Home = () => {
         className="relative -mt-20 h-screen flex overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1920&q=85')" }}
       >
-        {/* Dark overlay gradient — stronger on left for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30 z-[1]"></div>
-        {/* Subtle radial glow on top-left */}
-        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary/10 blur-[120px] rounded-full -translate-x-1/3 -translate-y-1/3 z-[1] pointer-events-none"></div>
+        {/* Daylight overlay gradient — fade from solid white to translucent on right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/30 z-[1]"></div>
+        {/* Warm sunlight radial glow on top-left */}
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full -translate-x-1/3 -translate-y-1/3 z-[1] pointer-events-none"></div>
 
         <DataGridHero
           spacing={2}
           duration={3}
-          color="#F5A623"
+          color="#FF9100"
           animationType="wave"
           pulseEffect={true}
           mouseGlow={true}
-          opacityMin={0.04}
-          opacityMax={0.22}
+          opacityMin={0.02}
+          opacityMax={0.15}
           background="transparent"
           className="absolute inset-0 w-full h-full"
           style={{ height: "100%" }}
@@ -53,48 +53,48 @@ const Home = () => {
           {/* Content block — left-aligned, vertically centred, padded for navbar */}
           <div className="max-w-3xl w-full pt-20 space-y-6 sm:space-y-8 text-left">
             {/* Eyebrow label */}
-            <p className="text-xs sm:text-sm font-label font-bold uppercase tracking-[0.3em] text-primary/80">
+            <p className="text-xs sm:text-sm font-label font-bold uppercase tracking-[0.3em] text-primary">
               Nigeria's Leading Solar Distributor
             </p>
 
-            <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-headline font-extrabold leading-[1.0] tracking-tighter text-white">
+            <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-headline font-extrabold leading-[1.0] tracking-tighter text-slate-900">
               Power Your World<br/>
               <span className="text-primary italic">With Clean Energy</span>
             </h1>
 
-            <p className="text-sm sm:text-base md:text-lg text-white/70 leading-relaxed max-w-lg">
+            <p className="text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed max-w-lg">
               Precision-engineered solar solutions designed for the Nigerian climate. Transition to reliable, independent power with our radiant monolith technology.
             </p>
 
             <div className="flex flex-col xs:flex-row gap-3 sm:gap-4 pt-2">
               <NavLink
                 to="/products"
-                className="bg-primary-container text-on-primary-container px-7 py-4 sm:px-9 sm:py-4 rounded-md font-label font-bold text-sm sm:text-base uppercase tracking-wider hover:brightness-110 transition-all flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(245,166,35,0.35)] w-full xs:w-auto"
+                className="bg-primary text-white px-7 py-4 sm:px-9 sm:py-4 rounded-md font-label font-bold text-sm sm:text-base uppercase tracking-wider hover:brightness-110 transition-all flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(255,145,0,0.25)] w-full xs:w-auto"
               >
                 Shop Products
                 <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 0" }}>shopping_cart</span>
               </NavLink>
               <button
                 onClick={() => openQuote('Book Installation')}
-                className="bg-white/5 border border-white/20 backdrop-blur-sm text-white px-7 py-4 sm:px-9 sm:py-4 rounded-md font-label font-bold text-sm sm:text-base uppercase tracking-wider hover:bg-white/10 hover:border-white/40 transition-all w-full xs:w-auto"
+                className="bg-white/80 border border-slate-200/80 backdrop-blur-sm text-slate-800 px-7 py-4 sm:px-9 sm:py-4 rounded-md font-label font-bold text-sm sm:text-base uppercase tracking-wider hover:bg-slate-5 hover:border-slate-300 transition-all w-full xs:w-auto"
               >
                 Book Installation
               </button>
             </div>
 
             {/* Stat strip */}
-            <div className="flex flex-wrap gap-6 sm:gap-10 pt-4 border-t border-white/10">
+            <div className="flex flex-wrap gap-6 sm:gap-10 pt-4 border-t border-slate-200">
               <div>
                 <p className="text-xl sm:text-2xl font-headline font-black text-primary">500+</p>
-                <p className="text-[11px] sm:text-xs text-white/50 uppercase tracking-widest font-label">Installations</p>
+                <p className="text-[11px] sm:text-xs text-slate-500 uppercase tracking-widest font-label">Installations</p>
               </div>
               <div>
                 <p className="text-xl sm:text-2xl font-headline font-black text-primary">10yr</p>
-                <p className="text-[11px] sm:text-xs text-white/50 uppercase tracking-widest font-label">Warranty</p>
+                <p className="text-[11px] sm:text-xs text-slate-500 uppercase tracking-widest font-label">Warranty</p>
               </div>
               <div>
                 <p className="text-xl sm:text-2xl font-headline font-black text-primary">24/7</p>
-                <p className="text-[11px] sm:text-xs text-white/50 uppercase tracking-widest font-label">Support</p>
+                <p className="text-[11px] sm:text-xs text-slate-500 uppercase tracking-widest font-label">Support</p>
               </div>
             </div>
           </div>
@@ -234,25 +234,25 @@ const Home = () => {
 
       {/* Final CTA Banner */}
       <section className="p-4 sm:p-8">
-        <div className="bg-gradient-to-r from-primary-container via-secondary-container to-primary-container rounded-lg py-12 px-6 sm:py-20 sm:px-12 relative overflow-hidden flex flex-col items-center text-center">
+        <div className="bg-gradient-to-br from-amber-500 via-orange-500 to-yellow-500 rounded-lg py-12 px-6 sm:py-20 sm:px-12 relative overflow-hidden flex flex-col items-center text-center">
           <div className="absolute inset-0 opacity-10 mix-blend-overlay">
             <div className="h-full w-full bg-[radial-gradient(circle_at_2px_2px,_white_1px,_transparent_0)] bg-[length:24px_24px]"></div>
           </div>
-          <h2 className="text-3xl sm:text-5xl md:text-7xl font-headline font-black uppercase tracking-tighter text-on-primary-container relative z-10 mb-6 sm:mb-8">
+          <h2 className="text-3xl sm:text-5xl md:text-7xl font-headline font-black uppercase tracking-tighter text-white relative z-10 mb-6 sm:mb-8">
             Ready to Go Solar?
           </h2>
-          <p className="text-on-primary-container/80 text-base sm:text-xl font-label max-w-xl mb-8 sm:mb-10 relative z-10 font-medium">
+          <p className="text-white/90 text-base sm:text-xl font-label max-w-xl mb-8 sm:mb-10 relative z-10 font-medium">
             Our engineering team is standing by to design your custom energy roadmap.
           </p>
           <div className="flex flex-wrap gap-4 relative z-10 justify-center">
             <button 
               onClick={() => navigate("/products")}
-              className="bg-on-primary-container text-primary-container px-8 py-4 sm:px-10 sm:py-5 rounded-md font-label font-bold text-base sm:text-xl uppercase tracking-widest hover:scale-105 transition-transform shadow-2xl">
+              className="bg-white text-orange-600 px-8 py-4 sm:px-10 sm:py-5 rounded-md font-label font-bold text-base sm:text-xl uppercase tracking-widest hover:scale-105 transition-transform shadow-2xl">
               Start Your Journey
             </button>
             <button 
               onClick={() => navigate("/products")}
-              className="bg-transparent border-2 border-on-primary-container/30 text-on-primary-container px-8 py-4 sm:px-10 sm:py-5 rounded-md font-label font-bold text-base sm:text-xl uppercase tracking-widest hover:bg-on-primary-container/10 transition-colors">
+              className="bg-transparent border-2 border-white/40 text-white px-8 py-4 sm:px-10 sm:py-5 rounded-md font-label font-bold text-base sm:text-xl uppercase tracking-widest hover:bg-white/10 transition-colors">
               View Price List
             </button>
           </div>

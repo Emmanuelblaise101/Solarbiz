@@ -29,20 +29,20 @@ export const Navbar = () => {
 
   return (
     <>
-      <header className="fixed top-0 w-full z-50 bg-neutral-900/60 backdrop-blur-xl shadow-[0_0_40px_-15px_rgba(245,166,35,0.3)]">
+      <header className="fixed top-0 w-full z-50 bg-white/75 backdrop-blur-xl border-b border-slate-200/80 shadow-[0_4px_30px_rgba(0,0,0,0.02)]">
       <div className="flex justify-between items-center px-8 h-20 max-w-full mx-auto relative z-20">
       <NavLink to="/" className="flex items-center gap-2">
-        <span className="material-symbols-outlined text-amber-500 text-3xl" style={{ fontVariationSettings: "'FILL' 0" }}>solar_power</span>
-        <h1 className="text-2xl font-black text-amber-500 italic font-headline tracking-tighter uppercase">SOLARBIZ</h1>
+        <span className="material-symbols-outlined text-amber-600 text-3xl" style={{ fontVariationSettings: "'FILL' 0" }}>solar_power</span>
+        <h1 className="text-2xl font-black text-amber-600 italic font-headline tracking-tighter uppercase">SOLARBIZ</h1>
       </NavLink>
       <nav className="hidden xl:flex gap-6 items-center">
-        <NavLink to="/" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold transition-colors ${isActive ? 'text-amber-500 border-b-2 border-amber-500 pb-1' : 'text-neutral-400 hover:text-neutral-100'}`}>Home</NavLink>
-        <NavLink to="/products" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold transition-colors ${isActive ? 'text-amber-500 border-b-2 border-amber-500 pb-1' : 'text-neutral-400 hover:text-neutral-100'}`}>Products</NavLink>
-        <NavLink to="/panels" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold transition-colors ${isActive ? 'text-amber-500 border-b-2 border-amber-500 pb-1' : 'text-neutral-400 hover:text-neutral-100'}`}>Panels</NavLink>
-        <NavLink to="/inverters" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold transition-colors ${isActive ? 'text-amber-500 border-b-2 border-amber-500 pb-1' : 'text-neutral-400 hover:text-neutral-100'}`}>Inverters</NavLink>
-        <NavLink to="/batteries" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold transition-colors ${isActive ? 'text-amber-500 border-b-2 border-amber-500 pb-1' : 'text-neutral-400 hover:text-neutral-100'}`}>Batteries</NavLink>
-        <NavLink to="/solar-lights" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold transition-colors ${isActive ? 'text-amber-500 border-b-2 border-amber-500 pb-1' : 'text-neutral-400 hover:text-neutral-100'}`}>Lights</NavLink>
-        <NavLink to="/stabilizers" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold transition-colors ${isActive ? 'text-amber-500 border-b-2 border-amber-500 pb-1' : 'text-neutral-400 hover:text-neutral-100'}`}>Stabilizers</NavLink>
+        <NavLink to="/" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold transition-colors ${isActive ? 'text-amber-600 border-b-2 border-amber-600 pb-1' : 'text-slate-600 hover:text-slate-900'}`}>Home</NavLink>
+        <NavLink to="/products" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold transition-colors ${isActive ? 'text-amber-600 border-b-2 border-amber-600 pb-1' : 'text-slate-600 hover:text-slate-900'}`}>Products</NavLink>
+        <NavLink to="/panels" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold transition-colors ${isActive ? 'text-amber-600 border-b-2 border-amber-600 pb-1' : 'text-slate-600 hover:text-slate-900'}`}>Panels</NavLink>
+        <NavLink to="/inverters" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold transition-colors ${isActive ? 'text-amber-600 border-b-2 border-amber-600 pb-1' : 'text-slate-600 hover:text-slate-900'}`}>Inverters</NavLink>
+        <NavLink to="/batteries" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold transition-colors ${isActive ? 'text-amber-600 border-b-2 border-amber-600 pb-1' : 'text-slate-600 hover:text-slate-900'}`}>Batteries</NavLink>
+        <NavLink to="/solar-lights" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold transition-colors ${isActive ? 'text-amber-600 border-b-2 border-amber-600 pb-1' : 'text-slate-600 hover:text-slate-900'}`}>Lights</NavLink>
+        <NavLink to="/stabilizers" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold transition-colors ${isActive ? 'text-amber-600 border-b-2 border-amber-600 pb-1' : 'text-slate-600 hover:text-slate-900'}`}>Stabilizers</NavLink>
       </nav>
       
       <div className="flex items-center gap-4">
@@ -50,7 +50,7 @@ export const Navbar = () => {
         <NavLink to="/cart" className="relative p-2 text-on-surface hover:text-primary transition-colors flex items-center justify-center">
           <span className="material-symbols-outlined text-[28px]" style={{ fontVariationSettings: "'FILL' 0" }}>shopping_cart_checkout</span>
           {cartCount > 0 && (
-            <span className="absolute 0 right-0 w-5 h-5 bg-primary text-on-primary rounded-full flex items-center justify-center text-[10px] font-black border-2 border-surface-container-highest shadow-md animate-pulse">
+            <span className="absolute 0 right-0 w-5 h-5 bg-primary text-on-primary rounded-full flex items-center justify-center text-[10px] font-black border-2 border-white shadow-md animate-pulse">
               {cartCount > 99 ? '99+' : cartCount}
             </span>
           )}
@@ -62,31 +62,31 @@ export const Navbar = () => {
               setAuthDefaultTab('login');
               setIsAuthModalOpen(true);
             }}
-            className="hidden sm:block text-neutral-400 hover:text-white font-headline font-bold uppercase tracking-widest text-sm transition-colors mx-2"
+            className="hidden sm:block text-slate-600 hover:text-slate-900 font-headline font-bold uppercase tracking-widest text-sm transition-colors mx-2"
           >
             Log In / Sign Up
           </button>
         ) : (
           <div className="relative group hidden sm:block mx-2">
-            <button className="flex items-center gap-2 bg-surface-container border border-white/5 rounded-full pl-1 pr-3 py-1 hover:bg-surface-container-high transition-colors">
+            <button className="flex items-center gap-2 bg-surface-container border border-slate-200/50 rounded-full pl-1 pr-3 py-1 hover:bg-surface-container-high transition-colors">
               <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary font-headline font-bold text-sm">
                 {user?.name.charAt(0).toUpperCase()}
               </div>
-              <span className="font-headline font-bold text-sm text-white">{user?.name.split(' ')[0]}</span>
+              <span className="font-headline font-bold text-sm text-slate-800">{user?.name.split(' ')[0]}</span>
             </button>
-            <div className="absolute right-0 top-full mt-2 w-48 bg-surface-container-highest border border-white/5 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
+            <div className="absolute right-0 top-full mt-2 w-48 bg-white border border-slate-200 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
               {isAdmin && (
                 <NavLink 
                   to="/admin" 
-                  className="block w-full text-left px-4 py-2 text-sm font-body text-amber-500 hover:bg-white/5 transition-colors font-bold"
+                  className="block w-full text-left px-4 py-2 text-sm font-body text-amber-600 hover:bg-slate-50 transition-colors font-bold"
                 >
                   Admin Console
                 </NavLink>
               )}
-              <button className="w-full text-left px-4 py-2 text-sm font-body text-neutral-400 hover:text-white hover:bg-white/5">My Account</button>
+              <button className="w-full text-left px-4 py-2 text-sm font-body text-slate-600 hover:text-slate-900 hover:bg-slate-50">My Account</button>
               <button 
                 onClick={handleLogout}
-                className="w-full text-left px-4 py-2 text-sm font-body text-error hover:bg-error/10 transition-colors"
+                className="w-full text-left px-4 py-2 text-sm font-body text-red-600 hover:bg-red-50 transition-colors"
               >
                 Log Out
               </button>
@@ -96,11 +96,11 @@ export const Navbar = () => {
 
         <button 
           onClick={() => openQuote('General Consultation')}
-          className="hidden sm:block bg-primary-container text-on-primary-container px-6 py-2.5 rounded-md font-label font-bold uppercase tracking-wider hover:scale-95 transition-transform active:scale-90 shadow-md">
+          className="hidden sm:block bg-primary text-white px-6 py-2.5 rounded-md font-label font-bold uppercase tracking-wider hover:scale-95 transition-transform active:scale-90 shadow-md">
           Get a Quote
         </button>
         <button 
-          className="xl:hidden bg-transparent border border-outline-variant p-2 rounded-md hover:bg-white/5 transition-colors text-on-surface"
+          className="xl:hidden bg-transparent border border-outline p-2 rounded-md hover:bg-slate-50 transition-colors text-on-surface"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle mobile menu"
         >
@@ -111,19 +111,19 @@ export const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       <div 
-        className={`xl:hidden absolute top-20 left-0 w-full bg-surface-container-highest border-t border-outline-variant/20 shadow-2xl overflow-hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'max-h-[calc(100vh-80px)] opacity-100' : 'max-h-0 opacity-0'}`}
+        className={`xl:hidden absolute top-20 left-0 w-full bg-white/95 border-t border-slate-200/60 shadow-2xl overflow-hidden transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'max-h-[calc(100vh-80px)] opacity-100' : 'max-h-0 opacity-0'}`}
       >
         <nav className="flex flex-col p-8 space-y-6 overflow-y-auto max-h-[80vh]">
-          <NavLink to="/" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold text-2xl transition-colors ${isActive ? 'text-amber-500' : 'text-on-surface hover:text-amber-500'}`}>Home</NavLink>
-          <NavLink to="/products" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold text-2xl transition-colors ${isActive ? 'text-amber-500' : 'text-on-surface hover:text-amber-500'}`}>Products</NavLink>
-          <NavLink to="/panels" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold text-2xl transition-colors ${isActive ? 'text-amber-500' : 'text-on-surface hover:text-amber-500'}`}>Solar Panels</NavLink>
-          <NavLink to="/inverters" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold text-2xl transition-colors ${isActive ? 'text-amber-500' : 'text-on-surface hover:text-amber-500'}`}>Inverters</NavLink>
-          <NavLink to="/batteries" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold text-2xl transition-colors ${isActive ? 'text-amber-500' : 'text-on-surface hover:text-amber-500'}`}>Batteries</NavLink>
-          <NavLink to="/solar-lights" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold text-2xl transition-colors ${isActive ? 'text-amber-500' : 'text-on-surface hover:text-amber-500'}`}>Solar Lights</NavLink>
-          <NavLink to="/stabilizers" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold text-2xl transition-colors ${isActive ? 'text-amber-500' : 'text-on-surface hover:text-amber-500'}`}>Stabilizers</NavLink>
+          <NavLink to="/" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold text-2xl transition-colors ${isActive ? 'text-amber-600' : 'text-slate-800 hover:text-amber-600'}`}>Home</NavLink>
+          <NavLink to="/products" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold text-2xl transition-colors ${isActive ? 'text-amber-600' : 'text-slate-800 hover:text-amber-600'}`}>Products</NavLink>
+          <NavLink to="/panels" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold text-2xl transition-colors ${isActive ? 'text-amber-600' : 'text-slate-800 hover:text-amber-600'}`}>Solar Panels</NavLink>
+          <NavLink to="/inverters" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold text-2xl transition-colors ${isActive ? 'text-amber-600' : 'text-slate-800 hover:text-amber-600'}`}>Inverters</NavLink>
+          <NavLink to="/batteries" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold text-2xl transition-colors ${isActive ? 'text-amber-600' : 'text-slate-800 hover:text-amber-600'}`}>Batteries</NavLink>
+          <NavLink to="/solar-lights" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold text-2xl transition-colors ${isActive ? 'text-amber-600' : 'text-slate-800 hover:text-amber-600'}`}>Solar Lights</NavLink>
+          <NavLink to="/stabilizers" className={({ isActive }) => `font-headline tracking-tighter uppercase font-bold text-2xl transition-colors ${isActive ? 'text-amber-600' : 'text-slate-800 hover:text-amber-600'}`}>Stabilizers</NavLink>
           
           {/* Mobile Auth / Logout actions */}
-          <div className="pt-6 border-t border-outline-variant/10 flex flex-col gap-4">
+          <div className="pt-6 border-t border-slate-200/60 flex flex-col gap-4">
             {!isAuthenticated ? (
               <button 
                 onClick={() => {
@@ -131,26 +131,26 @@ export const Navbar = () => {
                   setAuthDefaultTab('login');
                   setIsAuthModalOpen(true);
                 }}
-                className="w-full bg-neutral-800 border border-white/5 text-white py-3.5 rounded-md font-headline font-bold uppercase tracking-widest text-sm hover:bg-neutral-700 active:scale-95 transition-all text-center"
+                className="w-full bg-slate-100 border border-slate-200 text-slate-800 py-3.5 rounded-md font-headline font-bold uppercase tracking-widest text-sm hover:bg-slate-200 active:scale-95 transition-all text-center"
               >
                 Log In / Sign Up
               </button>
             ) : (
               <div className="space-y-4">
-                <div className="flex items-center gap-3 bg-neutral-800/40 border border-white/5 rounded-xl p-3">
+                <div className="flex items-center gap-3 bg-slate-50 border border-slate-200/60 rounded-xl p-3">
                   <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-headline font-bold text-base">
                     {user?.name.charAt(0).toUpperCase()}
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="font-headline font-bold text-white text-sm truncate">{user?.name}</p>
-                    <p className="font-body text-xs text-neutral-400 truncate">{user?.email}</p>
+                    <p className="font-headline font-bold text-slate-800 text-sm truncate">{user?.name}</p>
+                    <p className="font-body text-xs text-slate-500 truncate">{user?.email}</p>
                   </div>
                 </div>
                 {isAdmin && (
                   <NavLink 
                     to="/admin" 
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block w-full bg-amber-500/10 border border-amber-500/20 text-amber-500 py-3.5 rounded-md font-headline font-bold uppercase tracking-widest text-sm hover:bg-amber-500/20 active:scale-95 transition-all text-center"
+                    className="block w-full bg-amber-50 border border-amber-200 text-amber-700 py-3.5 rounded-md font-headline font-bold uppercase tracking-widest text-sm hover:bg-amber-100 active:scale-95 transition-all text-center"
                   >
                     Admin Console
                   </NavLink>
@@ -160,7 +160,7 @@ export const Navbar = () => {
                     setIsMobileMenuOpen(false);
                     handleLogout();
                   }}
-                  className="w-full bg-red-950/20 border border-red-900/30 text-red-500 py-3.5 rounded-md font-headline font-bold uppercase tracking-widest text-sm hover:bg-red-900/10 active:scale-95 transition-all text-center"
+                  className="w-full bg-red-50 border border-red-200 text-red-600 py-3.5 rounded-md font-headline font-bold uppercase tracking-widest text-sm hover:bg-red-100 active:scale-95 transition-all text-center"
                 >
                   Log Out
                 </button>
@@ -168,13 +168,13 @@ export const Navbar = () => {
             )}
           </div>
 
-          <div className="pt-6 border-t border-outline-variant/20">
+          <div className="pt-6 border-t border-slate-200/60">
             <button 
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 openQuote('General Consultation');
               }}
-              className="w-full bg-primary-container text-on-primary-container px-6 py-4 rounded-md font-label font-bold uppercase tracking-wider active:scale-95 transition-transform shadow-md">
+              className="w-full bg-primary text-white px-6 py-4 rounded-md font-label font-bold uppercase tracking-wider active:scale-95 transition-transform shadow-md">
               Get a Quote Now
             </button>
           </div>
@@ -193,36 +193,38 @@ export const Navbar = () => {
 
 export const Footer = () => {
   return (
-    <footer className="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-start bg-neutral-950 border-t border-neutral-800 gap-12 relative z-40">
+    <footer className="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-start bg-slate-900 border-t border-slate-800 gap-12 relative z-40">
       <div className="space-y-6">
         <div className="flex items-center gap-2">
           <span className="material-symbols-outlined text-amber-500 text-3xl">solar_power</span>
-          <span className="text-neutral-100 font-bold text-2xl font-headline italic tracking-tighter">SOLARBIZ</span>
+          <span className="text-white font-bold text-2xl font-headline italic tracking-tighter">SOLARBIZ</span>
         </div>
-        <p className="text-neutral-500 max-w-xs font-body text-sm leading-relaxed">
+        <p className="text-slate-400 max-w-xs font-body text-sm leading-relaxed">
           Empowering Nigerians with premium solar hardware and expert engineering since 2014.
         </p>
       </div>
       <div className="grid grid-cols-2 gap-12">
         <div className="flex flex-col gap-4">
-          <span className="text-neutral-100 font-headline font-bold text-xs uppercase tracking-widest">Resources</span>
-          <a className="text-neutral-500 hover:text-amber-400 transition-colors font-headline text-sm uppercase tracking-widest" href="#">Installation Guide</a>
-          <a className="text-neutral-500 hover:text-amber-400 transition-colors font-headline text-sm uppercase tracking-widest" href="#">Maintenance</a>
-          <a className="text-neutral-500 hover:text-amber-400 transition-colors font-headline text-sm uppercase tracking-widest" href="#">Solar Calculator</a>
+          <span className="text-white font-headline font-bold text-xs uppercase tracking-widest">Resources</span>
+          <a className="text-slate-400 hover:text-amber-500 transition-colors font-headline text-sm uppercase tracking-widest" href="#">Installation Guide</a>
+          <a className="text-slate-400 hover:text-amber-500 transition-colors font-headline text-sm uppercase tracking-widest" href="#">Maintenance</a>
+          <a className="text-slate-400 hover:text-amber-500 transition-colors font-headline text-sm uppercase tracking-widest" href="#">Solar Calculator</a>
         </div>
-        <div className="flex flex-col gap-4">
-          <span className="text-neutral-100 font-headline font-bold text-xs uppercase tracking-widest">Legal</span>
-          <a className="text-neutral-500 hover:text-amber-400 transition-colors font-headline text-sm uppercase tracking-widest" href="#">Privacy Policy</a>
-          <a className="text-neutral-500 hover:text-amber-400 transition-colors font-headline text-sm uppercase tracking-widest" href="#">Terms of Service</a>
+        <div className="grid grid-cols-1 gap-4">
+          <div className="flex flex-col gap-4">
+            <span className="text-white font-headline font-bold text-xs uppercase tracking-widest">Legal</span>
+            <a className="text-slate-400 hover:text-amber-500 transition-colors font-headline text-sm uppercase tracking-widest" href="#">Privacy Policy</a>
+            <a className="text-slate-400 hover:text-amber-500 transition-colors font-headline text-sm uppercase tracking-widest" href="#">Terms of Service</a>
+          </div>
         </div>
       </div>
-      <div className="w-full md:w-auto flex flex-col items-start md:items-end gap-6 border-t md:border-t-0 border-neutral-800 pt-8 md:pt-0">
-        <p className="font-headline text-sm uppercase tracking-widest text-neutral-500">© 2026 SolarBiz Solutions Nigeria. All Rights Reserved.</p>
+      <div className="w-full md:w-auto flex flex-col items-start md:items-end gap-6 border-t md:border-t-0 border-slate-800 pt-8 md:pt-0">
+        <p className="font-headline text-sm uppercase tracking-widest text-slate-400">© 2026 SolarBiz Solutions Nigeria. All Rights Reserved.</p>
         <div className="flex gap-4">
-          <div className="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary/20 transition-colors cursor-pointer text-white">
+          <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary/20 transition-colors cursor-pointer text-white">
             <span className="material-symbols-outlined text-sm">public</span>
           </div>
-          <div className="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary/20 transition-colors cursor-pointer text-white">
+          <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary/20 transition-colors cursor-pointer text-white">
             <span className="material-symbols-outlined text-sm">share</span>
           </div>
         </div>
